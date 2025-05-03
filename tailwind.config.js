@@ -6,10 +6,24 @@ export default {
   ],
   theme: {
     extend: {
-      colors:{
-        "primary" : "#000000",
-        "secondary" : "#00ffff",
-      }
+      colors: {
+        primary: "#212121",   // your primary color
+        secondary: "#00ffff", // your secondary color
+        accent: "#7fffd4",   // your accent color
+      },
+      animation: {
+        'pulse-glow': 'pulseGlow 2s ease-in-out infinite', // glow animation
+      },
+      keyframes: {
+        pulseGlow: {
+          '0%, 100%': {
+            boxShadow: '0 0 0px rgba(0, 255, 255, 0)', // no glow at start/end
+          },
+          '50%': {
+            boxShadow: '0 0 40px rgba(0, 255, 255, 0.7)', // glowing effect
+          },
+        },
+      },
     },
   },
   plugins: [],
