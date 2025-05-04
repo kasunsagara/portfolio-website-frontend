@@ -1,12 +1,83 @@
+import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
+
 const Footer = () => (
-    <footer className="bg-primary text-white py-6">
-      <div className="container mx-auto text-center">
-        <p className="text-lg">
-          © {new Date().getFullYear()} <span className="font-semibold text-secondary">Kasun Sagara</span>. All Rights Reserved.
+  <footer className="bg-primary text-white py-10">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-6 md:space-y-0">
+        
+        {/* Left - Name and Description */}
+        <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
+          <h1 className="text-2xl font-semibold text-accent mb-2">Kasun Sagara</h1>
+          <p className="max-w-md">
+            A Computer Science undergraduate, Full Stack Web Developer and UI/UX Designer 
+            with a passion for building modern web applications with the MERN Stack.
+          </p>
+        </div>
+
+        {/* Center - Quick Links */}
+        <div className="flex flex-col items-center md:items-start space-y-2">
+          <h1 className="text-2xl font-semibold text-accent mb-2">Quick Links</h1>
+          <a href="#about" className="hover:text-gray-500 transition-colors duration-300">
+            About
+          </a>
+          <a href="#projects" className="hover:text-gray-500 transition-colors duration-300">
+            Projects
+          </a>
+          <a href="#contact" className="hover:text-gray-500 transition-colors duration-300">
+            Contact
+          </a>
+        </div>
+
+        {/* Right - Social Icons */}
+        <div className="flex flex-col items-center md:items-start">
+          <h1 className="text-2xl font-semibold text-accent mb-4">Connect With Me</h1>
+          <div className="flex space-x-4 text-xl">
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://wa.me/94771670585"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+            >
+              <FaWhatsapp />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr className="border-t border-white/30 my-6" />
+
+      <div className="flex justify-center">
+        <p className="text-center text-base font-medium tracking-wide">
+          © {new Date().getFullYear()}{" "}
+          <span className="font-semibold transition-colors duration-300">Kasun Sagara</span>. All Rights Reserved.
         </p>
       </div>
-    </footer>
-  );
-  
-  export default Footer;
-  
+    </div>
+  </footer>
+);
+
+export default Footer;

@@ -84,7 +84,10 @@ const About = () => {
                 <p className="text-lg font-medium">Bachelor of Computer Science [BCS]</p>
                 <p className="text-sm mb-2">July 2023 - Present</p>
                 <p className="text-base leading-relaxed">
-                  This degree focuses on programming, software development, databases, and computer systems, with both theoretical and practical project experience. It also includes full-stack web development, covering both front-end and back-end technologies.
+                  This degree focuses on programming, software development, databases, and computer <br />
+                  systems, with both theoretical and practical project experience. It also includes full stack <br />
+                  web development, covering both frontend and backend technologies. Students build <br />
+                  applications and sharpen problem solving skills for the tech industry.
                 </p>
               </div>
 

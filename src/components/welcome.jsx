@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 
 const Welcome = () => {
   const roles = [
@@ -43,6 +44,41 @@ const Welcome = () => {
           </p>
 
           <p className="text-accent mb-8">Welcome to my portfolio! Explore the other sections to learn more about my projects, skills, and professional journey.</p>
+
+          <div className="flex space-x-4 text-xl mb-6">
+                      <a
+                        href="https://facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+                      >
+                        <FaFacebookF />
+                      </a>
+                      <a
+                        href="https://linkedin.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+                      >
+                        <FaLinkedinIn />
+                      </a>
+                      <a
+                        href="https://github.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+                      >
+                        <FaGithub />
+                      </a>
+                      <a
+                        href="https://wa.me/94771670585"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+                      >
+                        <FaWhatsapp />
+                      </a>
+                    </div>
 
           <a
             href="#about"
