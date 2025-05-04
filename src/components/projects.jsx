@@ -1,40 +1,43 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ProjectCard from './ProjectCard';
 import axios from 'axios';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_BASE}/api/projects`)
-      .then(res => setProjects(res.data))
-      .catch(console.error);
+    const fetchProjects = async () => {
+      try {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/projects`);
+        setProjects(res.data);
+      } catch (err) {
+        console.error('Error fetching projects:', err);
+      }
+    };
+
+    fetchProjects();
   }, []);
 
   return (
-    <section id="projects" className="py-16 bg-primary text-white px-4">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold text-secondary mb-8">My Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map(project => (
-            <div key={project._id} className="project-card bg-white text-primary rounded-lg overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-2xl">
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold text-secondary mb-4">{project.title}</h3>
-                <p className="text-lg text-gray-700 mb-6">{project.description}</p>
-                <a
-                  href={project.link}
-                  className="inline-block py-2 px-6 text-lg font-semibold bg-secondary text-primary rounded-lg hover:bg-primary hover:text-white transition duration-300"
-                >
-                  View Project
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+    <section className="min-h-screen bg-primary py-12 px-6">
+      <h2 className="text-5xl font-bold text-center text-accent mb-10">
+        My Projects
+      </h2>
+
+      <div className="flex flex-wrap gap-8 justify-center">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project._id}
+            name={project.name}
+            image={project.image}
+            description={project.description}
+            startDate={project.startDate}
+            endDate={project.endDate}
+            skills={project.skills}
+            githubLink="https://github.com/yourusername/project"
+            linkedinLink="https://www.linkedin.com/in/yourprofile"
+          />
+        ))}
       </div>
     </section>
   );

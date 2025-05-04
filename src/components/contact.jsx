@@ -19,7 +19,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-primary text-white px-4">
+    <section id="contact" className="py-16 bg-secondary text-white px-4">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold text-secondary mb-8">Contact Me</h2>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg space-y-6">

@@ -30,23 +30,23 @@ const Welcome = () => {
       <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-8 text-center md:text-left -mt-20">
         {/* Text content */}
         <div className="max-w-lg z-16">
-          <h1 className="text-6xl font-bold text-secondary mb-4 whitespace-nowrap">
+          <h1 className="text-6xl font-bold text-accent mb-4 whitespace-nowrap">
             Hi, I'm Kasun Sagara
           </h1>
 
           <p
-            className={`text-[25px] font-medium text-secondary mb-4 transition-opacity duration-500 ${
+            className={`text-[25px] font-medium text-accent mb-4 transition-opacity duration-500 ${
               fade ? "opacity-100" : "opacity-0"
             }`}
           >
             {roles[currentRoleIndex]}
           </p>
 
-          <p className="text-secondary mb-8">Welcome to my portfolio! Explore the other sections to learn more about my projects, skills, and professional journey.</p>
+          <p className="text-accent mb-8">Welcome to my portfolio! Explore the other sections to learn more about my projects, skills, and professional journey.</p>
 
           <a
             href="#about"
-            className="inline-block py-2 px-6 text-lg font-semibold bg-secondary text-primary rounded-lg shadow-lg hover:bg-gray-700 hover:text-white transition duration-300 z-10 relative"
+            className="inline-block py-2 px-6 text-lg font-semibold bg-accent text-black rounded-lg shadow-lg hover:bg-gray-700 hover:text-white transition duration-300 z-10 relative"
           >
             Learn More About Me
           </a>
@@ -58,7 +58,7 @@ const Welcome = () => {
   <div className="absolute inset-0 rounded-full animate-pulse-glow z-0" />
 
   {/* Image inside glow */}
-  <div className="relative w-full h-full rounded-full overflow-hidden z-10 border-4 border-secondary animate-pulse-glow">
+  <div className="relative w-full h-full rounded-full overflow-hidden z-10 border-4 border-accent animate-pulse-glow">
     <img
       src="/picture1.jpg"
       alt="Kasun Sagara"

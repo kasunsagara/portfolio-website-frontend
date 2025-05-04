@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#212121",   // your primary color
-        secondary: "#00ffff", // your secondary color
-        accent: "#7fffd4",   // your accent color
+        primary: "#1f1f1f",
+        secondary: "#121212",  
+        trinity: "#2c2c2c",        
+        accent: "#00ffff",
       },
       animation: {
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite', // glow animation
