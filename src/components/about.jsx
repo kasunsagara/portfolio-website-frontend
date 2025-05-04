@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { FaUniversity, FaSchool } from "react-icons/fa"; 
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("education");
@@ -76,12 +77,13 @@ const About = () => {
 
           {/* Education Tab */}
           {activeTab === "education" && (
-            <div className="space-y-6 text-left">
+            <div className="space-y-10 text-left">
               <div>
-                <h3 className="text-xl font-semibold text-accent">
-                  Trincomalee Campus, Eastern University of Sri Lanka
-                </h3>
-                <p className="text-lg font-medium">Bachelor of Computer Science [BCS]</p>
+              <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
+                <FaUniversity className="text-3xl" />
+                <span>Trincomalee Campus, Eastern University of Sri Lanka</span>
+              </h3>
+                <p className="text-lg font-medium mb-2">Bachelor of Computer Science [BCS]</p>
                 <p className="text-sm mb-2">July 2023 - Present</p>
                 <p className="text-base leading-relaxed">
                   This degree focuses on programming, software development, databases, and computer <br />
@@ -92,10 +94,11 @@ const About = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-accent">
-                  R/Dharmaloka Maha Vidyalaya, Pelmadulla
-                </h3>
-                <p className="text-lg font-medium">GCE Advanced Level</p>
+              <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
+                <FaSchool className="text-3xl" />
+                <span>R/Dharmaloka Maha Vidyalaya, Pelmadulla</span>
+              </h3>
+                <p className="text-lg font-medium mb-2">GCE Advanced Level</p>
                 <p className="text-sm mb-2">Completed 2021</p>
                 <p className="text-base leading-relaxed mb-1">
                   Specialized in the maths stream with a Z-score of <span className="font-semibold">0.7018</span>.
