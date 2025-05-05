@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProjectCard = ({ name, image, description, startDate, endDate, skills, githubLink, linkedinLink }) => {
   return (
-    <div className="w-96 bg-trinity text-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-2">
+    <div className="w-96 bg-trinity text-white rounded-2xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-300">
       
       {/* Project Image */}
       <img
@@ -14,7 +14,7 @@ const ProjectCard = ({ name, image, description, startDate, endDate, skills, git
       {/* Info Section */}
       <div className="p-6 flex flex-col justify-between h-full"> {/* Increased padding */}
         {/* Title */}
-        <h3 className="text-2xl font-bold">{name}</h3> {/* Increased font size */}
+        <h3 className="text-2xl font-bold text-white">{name}</h3> {/* Increased font size */}
 
         {/* Description */}
         <p className="text-base text-gray-200">{description}</p> {/* Increased font size */}

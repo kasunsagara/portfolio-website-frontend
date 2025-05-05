@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 
-const Welcome = () => {
+const Home = () => {
   const roles = [
     "Computer Science Undergraduate",
     "Full Stack Web Developer",
@@ -25,7 +25,7 @@ const Welcome = () => {
 
   return (
     <section
-      id="welcome"
+      id="home"
       className="flex items-center justify-center min-h-screen bg-primary text-white px-4 mt-16"
     >
       <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-8 text-center md:text-left -mt-20">
@@ -47,13 +47,14 @@ const Welcome = () => {
 
           <div className="flex space-x-4 text-xl mb-6">
                       <a
-                        href="https://facebook.com/"
+                        href="https://github.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
                       >
-                        <FaFacebookF />
+                        <FaGithub />
                       </a>
+
                       <a
                         href="https://linkedin.com/"
                         target="_blank"
@@ -62,14 +63,16 @@ const Welcome = () => {
                       >
                         <FaLinkedinIn />
                       </a>
+
                       <a
-                        href="https://github.com/"
+                        href="https://facebook.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
                       >
-                        <FaGithub />
+                        <FaFacebookF />
                       </a>
+                     
                       <a
                         href="https://wa.me/94771670585"
                         target="_blank"
@@ -108,4 +111,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default Home;

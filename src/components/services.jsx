@@ -1,0 +1,69 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+// Import icon libraries
+import * as FaIcons from "react-icons/fa";
+import * as SiIcons from "react-icons/si";
+import * as DiIcons from "react-icons/di";
+import * as AiIcons from "react-icons/ai";
+import * as BsIcons from "react-icons/bs";
+
+const Services = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/services`);
+        setServices(response.data);
+      } catch (error) {
+        console.error("Error fetching services:", error);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
+  // Helper to get icon component
+  const getIconComponent = (iconName) => {
+    const iconLibraries = {
+      ...FaIcons,
+      ...SiIcons,
+      ...DiIcons,
+      ...AiIcons,
+      ...BsIcons,
+    };
+    const Icon = iconLibraries[iconName];
+    return Icon ? <Icon className="text-4xl text-accent mb-4" /> : null;
+  };
+
+  return (
+    <section 
+      id="services"
+      className="py-12 bg-primary"
+    >
+      <div className="max-w-6xl mx-auto px-24">
+        <h2 className="text-5xl font-bold text-center text-accent mb-10">
+          My Services
+        </h2>
+        {services.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((service) => (
+              <div
+                key={service._id}
+                className="bg-trinity shadow-lg rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 text-white"
+              >
+                {/* Render Icon */}
+                {getIconComponent(service.icon)}
+                <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+                <p className="text-base text-gray-200">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Services;

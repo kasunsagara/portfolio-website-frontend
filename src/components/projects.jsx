@@ -19,7 +19,10 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-primary py-12 px-6">
+    <section
+      id="projects" 
+      className="min-h-screen bg-secondary py-12 px-6"
+    >
       <h2 className="text-5xl font-bold text-center text-accent mb-10">
         My Projects
       </h2>
@@ -34,8 +37,8 @@ const Projects = () => {
             startDate={project.startDate}
             endDate={project.endDate}
             skills={project.skills}
-            githubLink="https://github.com/yourusername/project"
-            linkedinLink="https://www.linkedin.com/in/yourprofile"
+            githubLink={project.githubLink}
+            linkedinLink={project.linkedinLink}
           />
         ))}
       </div>
@@ -44,3 +47,8 @@ const Projects = () => {
 };
 
 export default Projects;
+
+
+
+
+

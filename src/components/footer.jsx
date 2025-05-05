@@ -1,7 +1,7 @@
 import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => (
-  <footer className="bg-primary text-white py-10">
+  <footer className="bg-secondary text-white py-10">
     <div className="max-w-7xl mx-auto px-6">
       <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-6 md:space-y-0">
         
@@ -17,9 +17,15 @@ const Footer = () => (
         {/* Center - Quick Links */}
         <div className="flex flex-col items-center md:items-start space-y-2">
           <h1 className="text-2xl font-semibold text-accent mb-2">Quick Links</h1>
+          <a href="#home" className="hover:text-gray-500 transition-colors duration-300">
+            Home
+          </a>          
           <a href="#about" className="hover:text-gray-500 transition-colors duration-300">
             About
           </a>
+          <a href="#services" className="hover:text-gray-500 transition-colors duration-300">
+            Services
+          </a>          
           <a href="#projects" className="hover:text-gray-500 transition-colors duration-300">
             Projects
           </a>
@@ -33,13 +39,14 @@ const Footer = () => (
           <h1 className="text-2xl font-semibold text-accent mb-4">Connect With Me</h1>
           <div className="flex space-x-4 text-xl">
             <a
-              href="https://facebook.com/"
+              href="https://github.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
             >
-              <FaFacebookF />
-            </a>
+              <FaGithub />
+            </a> 
+
             <a
               href="https://linkedin.com/"
               target="_blank"
@@ -48,14 +55,16 @@ const Footer = () => (
             >
               <FaLinkedinIn />
             </a>
+
             <a
-              href="https://github.com/"
+              href="https://facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
             >
-              <FaGithub />
+              <FaFacebookF />
             </a>
+
             <a
               href="https://wa.me/94771670585"
               target="_blank"

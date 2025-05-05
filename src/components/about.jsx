@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { FaUniversity, FaSchool } from "react-icons/fa"; 
 
+// Import full icon libraries (adjust based on your icon usage)
+import * as FaIcons from "react-icons/fa";
+import * as SiIcons from "react-icons/si";
+import * as DiIcons from "react-icons/di";
+import * as AiIcons from "react-icons/ai";
+import * as BsIcons from "react-icons/bs";
+
 const About = () => {
   const [activeTab, setActiveTab] = useState("education");
   const [skills, setSkills] = useState([]);
@@ -9,7 +16,7 @@ const About = () => {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const res = await axios.get(import.meta.env.VITE_BACKEND_URL + '/api/skills'); // Replace with your backend URL
+        const res = await axios.get(import.meta.env.VITE_BACKEND_URL + '/api/skills');
         setSkills(res.data);
       } catch (err) {
         console.error("Failed to fetch skills:", err);
@@ -18,14 +25,28 @@ const About = () => {
     fetchSkills();
   }, []);
 
+  // Helper to return correct icon component
+  const getIconComponent = (iconName) => {
+    const iconLibraries = {
+      ...FaIcons,
+      ...SiIcons,
+      ...DiIcons,
+      ...AiIcons,
+      ...BsIcons,
+    };
+    const Icon = iconLibraries[iconName];
+    return Icon ? <Icon className="text-3xl text-accent mb-2" /> : null;
+  };
+
   const renderSkillCards = (category) => {
     return skills
       .filter((skill) => skill.category === category)
       .map((skill, index) => (
         <div
           key={index}
-          className="bg-trinity px-6 py-4 rounded-2xl shadow-md w-64 transform transition duration-300 hover:scale-105 hover:bg-gray-500 hover:shadow-xl cursor-pointer"
+          className="bg-trinity px-6 py-4 rounded-2xl shadow-md w-64 transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
         >
+          {getIconComponent(skill.icon)}
           <h4 className="text-lg font-bold">{skill.name}</h4>
           <p className="text-sm mt-1">{skill.desc}</p>
         </div>
@@ -33,7 +54,10 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-secondary text-white px-4">
+    <section 
+      id="about" 
+      className="min-h-screen flex items-center justify-center bg-secondary text-white px-4"
+    >
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-0 text-center">
         
         {/* Left: Image */}
@@ -47,7 +71,7 @@ const About = () => {
 
         {/* Right: Content */}
         <div className="w-full md:w-1/2 text-left">
-        <h2 className="text-5xl font-bold text-left text-accent mb-10">
+          <h2 className="text-5xl font-bold text-left text-accent mb-10">
             About Me
           </h2>
 
@@ -79,10 +103,10 @@ const About = () => {
           {activeTab === "education" && (
             <div className="space-y-10 text-left">
               <div>
-              <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
-                <FaUniversity className="text-3xl" />
-                <span>Trincomalee Campus, Eastern University of Sri Lanka</span>
-              </h3>
+                <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
+                  <FaUniversity className="text-3xl" />
+                  <span>Trincomalee Campus, Eastern University of Sri Lanka</span>
+                </h3>
                 <p className="text-lg font-medium mb-2">Bachelor of Computer Science [BCS]</p>
                 <p className="text-sm mb-2">July 2023 - Present</p>
                 <p className="text-base leading-relaxed">
@@ -94,10 +118,10 @@ const About = () => {
               </div>
 
               <div>
-              <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
-                <FaSchool className="text-3xl" />
-                <span>R/Dharmaloka Maha Vidyalaya, Pelmadulla</span>
-              </h3>
+                <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
+                  <FaSchool className="text-3xl" />
+                  <span>R/Dharmaloka Maha Vidyalaya, Pelmadulla</span>
+                </h3>
                 <p className="text-lg font-medium mb-2">GCE Advanced Level</p>
                 <p className="text-sm mb-2">Completed 2021</p>
                 <p className="text-base leading-relaxed mb-1">

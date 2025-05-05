@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './components/header';
-import Welcome from './components/welcome';
+import Home from './components/home';
 import About from './components/about';
+import Services from './components/services';
 import Projects from './components/projects';
 import Contact from './components/contact';
 import Footer from './components/footer';
@@ -10,8 +11,9 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Welcome />
+      <Home />
       <About />
+      <Services />
       <Projects />
       <Contact />
       <Footer />
@@ -20,3 +22,5 @@ const App = () => {
 };
 
 export default App;
+
+//https://lahiru-dhananjaya.netlify.app/

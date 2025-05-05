@@ -5,12 +5,12 @@ const Header = () => (
       <div className="text-5xl font-bold text-accent">KS</div>
 
       {/* Right Side: Navigation Links */}
-      <ul className="text-[20px] font-medium flex space-x-24">
-        {['Home', 'About', 'Projects', 'Contact'].map((label, index) => (
+      <ul className="text-[20px] font-medium flex space-x-20">
+        {['Home', 'About', 'Services', 'Projects', 'Contact'].map((label, index) => (
           <li key={index}>
             <a
               href={`#${label.toLowerCase()}`}
-              className="relative text-accent transition duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 hover:after:w-full after:h-[2px] after:bg-red-500 after:transition-all after:duration-300"
+              className="relative text-accent transition duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 hover:after:w-full after:h-[2px] after:bg-white after:transition-all after:duration-300"
             >
               {label}
             </a>

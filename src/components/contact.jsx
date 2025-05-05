@@ -29,7 +29,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-secondary text-white px-4">
+    <section 
+      id="contact" 
+      className="py-16 bg-primary text-white px-4"
+    >
       <div className="container mx-auto text-center">
         <h2 className="text-5xl font-bold text-accent mb-12">Contact Me</h2>
 
@@ -37,7 +40,7 @@ const Contact = () => {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="w-full lg:w-1/2 bg-trinity p-8 rounded-lg shadow-lg space-y-6"
+            className="w-full lg:w-1/2 bg-trinity p-10 rounded-lg shadow-lg space-y-6"
           >
             <input
               name="name"
@@ -92,21 +95,21 @@ const Contact = () => {
 
           {/* Contact Info Boxes */}
           <div className="w-full lg:w-1/4 space-y-6">
-            <div className="bg-trinity p-6 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-trinity p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
                 <FaEnvelope className="text-[32px] text-accent" />
               </div>
               <h3 className="font-semibold text-2xl text-accent">Email</h3>
               <p className="text-white mt-2">kasunsagara689@gmail.com</p>
             </div>
-            <div className="bg-trinity p-6 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-trinity p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
                 <FaPhoneAlt className="text-[32px] text-accent" />
               </div>
               <h3 className="font-semibold text-2xl text-accent">Phone</h3>
               <p className="text-white mt-2">0771670585</p>
             </div>
-            <div className="bg-trinity p-6 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-trinity p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
                 <FaMapMarkerAlt className="text-[32px] text-accent" />
               </div>
