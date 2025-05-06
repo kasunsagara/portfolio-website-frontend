@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
-const Contact = () => {
+export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [responseMsg, setResponseMsg] = useState({ type: '', text: '' });
@@ -123,4 +123,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+

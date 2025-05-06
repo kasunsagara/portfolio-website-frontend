@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 
-const Home = () => {
+export default function Home() {
   const roles = [
     "Computer Science Undergraduate",
     "Full Stack Web Developer",
@@ -114,4 +114,3 @@ const Home = () => {
   );
 };
 
-export default Home;

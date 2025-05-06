@@ -1,4 +1,6 @@
-const Header = () => (
+export default function Header() {
+  return (
+    // Header component with fixed position and background color
   <header className="fixed top-0 left-0 w-full bg-primary text-white py-4 z-50">
     <nav className="container mx-auto px-24 flex justify-between items-center">
       {/* Left Side: Logo */}
@@ -19,6 +21,8 @@ const Header = () => (
       </ul>
     </nav>
   </header>
-);
+  );
+};
 
-export default Header;
+
+

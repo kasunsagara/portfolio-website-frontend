@@ -8,7 +8,7 @@ import * as DiIcons from "react-icons/di";
 import * as AiIcons from "react-icons/ai";
 import * as BsIcons from "react-icons/bs";
 
-const Services = () => {
+export default function Services() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -66,4 +66,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+
