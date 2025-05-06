@@ -55,13 +55,13 @@ function ProjectCard({ name, image, description, startDate, endDate, skills, git
       {/* Info Section */}
       <div className="p-6 flex flex-col justify-between h-full">
         <h3 className="text-2xl font-bold text-white">{name}</h3>
-        <p className="text-base text-gray-200">{description}</p>
-        <p className="text-sm text-gray-300">
-          <span className="font-semibold text-white">Skills:</span>{' '}
+        <p className="text-base text-white">{description}</p>
+        <p className="text-sm text-white">
+          <span className="font-bold text-white">Skills:</span>{' '}
           {skills.join(', ')}
         </p>
-        <p className="text-sm text-gray-300">
-          <span className="font-semibold text-white">Duration:</span>{' '}
+        <p className="text-sm text-white">
+          <span className="font-bold text-white">Duration:</span>{' '}
           {new Date(startDate).toLocaleDateString()} – {new Date(endDate).toLocaleDateString()}
         </p>
         <div className="mt-4 flex gap-4">

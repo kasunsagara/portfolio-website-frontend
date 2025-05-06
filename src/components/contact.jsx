@@ -1,28 +1,35 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import axios from 'axios';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
-  const [responseMsg, setResponseMsg] = useState({ type: '', text: '' });
+
+  // Refs for inputs
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setResponseMsg({ type: '', text: '' }); // Clear message on input change
+  };
+
+  const handleKeyDown = (e, nextFieldRef) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      nextFieldRef?.current?.focus();
+    }
   };
 
   const handleSubmit = async e => {
     e.preventDefault();
     setLoading(true);
-    setResponseMsg({ type: '', text: '' });
 
     try {
       await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contacts`, formData);
-      setResponseMsg({ type: 'success', text: 'Message sent successfully!' });
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      setResponseMsg({ type: 'error', text: 'Error sending message. Please try again.' });
+      // Handle silently
     } finally {
       setLoading(false);
     }
@@ -48,19 +55,23 @@ export default function Contact() {
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
+              onKeyDown={e => handleKeyDown(e, emailRef)}
               required
               className="w-full p-4 text-white bg-primary rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
             />
             <input
+              ref={emailRef}
               name="email"
               type="email"
               placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
+              onKeyDown={e => handleKeyDown(e, messageRef)}
               required
               className="w-full p-4 text-white bg-primary rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
             />
             <textarea
+              ref={messageRef}
               name="message"
               rows="6"
               placeholder="Your Message"
@@ -81,16 +92,6 @@ export default function Contact() {
             >
               {loading ? 'Sending...' : 'Send Message'}
             </button>
-
-            {responseMsg.text && (
-              <p
-                className={`text-sm mt-2 ${
-                  responseMsg.type === 'success' ? 'text-green-400' : 'text-red-400'
-                }`}
-              >
-                {responseMsg.text}
-              </p>
-            )}
           </form>
 
           {/* Contact Info Boxes */}
@@ -121,6 +122,4 @@ export default function Contact() {
       </div>
     </section>
   );
-};
-
-
+}

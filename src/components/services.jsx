@@ -56,7 +56,7 @@ export default function Services() {
                 {/* Render Icon */}
                 {getIconComponent(service.icon)}
                 <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-                <p className="text-base text-gray-200">{service.description}</p>
+                <p className="text-base text-white">{service.description}</p>
               </div>
             ))}
           </div>
