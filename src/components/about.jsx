@@ -56,7 +56,7 @@ const About = () => {
   return (
     <section 
       id="about" 
-      className="min-h-screen flex items-center justify-center bg-secondary text-white px-4"
+      className="flex items-center justify-center min-h-screen bg-secondary text-white px-4 py-24"
     >
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-0 text-center">
         

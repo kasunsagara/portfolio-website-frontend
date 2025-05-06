@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="flex items-center justify-center min-h-screen bg-primary text-white px-4 mt-16"
+      className="flex items-center justify-center min-h-screen bg-primary px-4 mt-16"
     >
       <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-8 text-center md:text-left -mt-20">
         {/* Text content */}
