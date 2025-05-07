@@ -1,5 +1,3 @@
-import { BiAccessibility } from 'react-icons/bi';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
