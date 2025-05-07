@@ -52,7 +52,7 @@ export default function Home() {
               href="https://github.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-tertiary text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
             >
               <FaGithub />
             </a>
@@ -61,7 +61,7 @@ export default function Home() {
               href="https://linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-tertiary text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
             >
               <FaLinkedinIn />
             </a>
@@ -70,7 +70,7 @@ export default function Home() {
               href="https://facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-tertiary text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
             >
               <FaFacebookF />
             </a>
@@ -79,7 +79,7 @@ export default function Home() {
               href="https://wa.me/94771670585"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-trinity text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-tertiary text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
             >
               <FaWhatsapp />
             </a>

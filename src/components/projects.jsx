@@ -18,7 +18,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="min-h-screen bg-secondary px-6 py-24">
+    <section id="projects" className="min-h-screen bg-primary px-6 py-24">
       <h2 className="text-5xl font-bold text-center text-accent mb-10">
         My Projects
       </h2>
@@ -44,7 +44,7 @@ export default function Projects() {
 
 function ProjectCard({ name, image, description, startDate, endDate, skills, githubLink, linkedinLink }) {
   return (
-    <div className="w-96 bg-trinity text-white rounded-2xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-300">
+    <div className="w-96 bg-secondary text-white rounded-2xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-300">
       {/* Project Image */}
       <img
         src={image}

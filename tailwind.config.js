@@ -1,3 +1,5 @@
+import { BiAccessibility } from 'react-icons/bi';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,10 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#1f1f1f",
-        secondary: "#121212",  
-        trinity: "#2c2c2c",        
-        accent: "#00ffff",
+        primary: "#1a1a1a",
+        secondary: "#2c2c2c",        
+        tertiary: "#282828",
+        accent: "#00ffff", 
       },
       animation: {
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite', // glow animation

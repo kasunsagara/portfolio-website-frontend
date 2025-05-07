@@ -44,7 +44,7 @@ export default function About() {
       .map((skill, index) => (
         <div
           key={index}
-          className="bg-trinity px-6 py-4 rounded-2xl shadow-md w-64 transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+          className="bg-secondary px-6 py-4 rounded-2xl shadow-md w-64 transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
         >
           {getIconComponent(skill.icon)}
           <h4 className="text-lg font-bold">{skill.name}</h4>
@@ -91,7 +91,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="flex items-center justify-center min-h-screen bg-secondary text-white px-4 py-24"
+      className="flex items-center justify-center min-h-screen bg-primary text-white px-4 py-24"
     >
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-0 text-center">
         {/* Left: Image */}

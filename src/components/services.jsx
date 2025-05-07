@@ -51,7 +51,7 @@ export default function Services() {
             {services.map((service) => (
               <div
                 key={service._id}
-                className="bg-trinity shadow-lg rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 text-white"
+                className="bg-secondary shadow-lg rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 text-white"
               >
                 {/* Render Icon */}
                 {getIconComponent(service.icon)}

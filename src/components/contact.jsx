@@ -47,7 +47,7 @@ export default function Contact() {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="w-full lg:w-1/2 bg-trinity p-10 rounded-lg shadow-lg space-y-6"
+            className="w-full lg:w-1/2 bg-secondary p-10 rounded-lg shadow-lg space-y-6"
           >
             <input
               name="name"
@@ -96,21 +96,21 @@ export default function Contact() {
 
           {/* Contact Info Boxes */}
           <div className="w-full lg:w-1/4 space-y-6">
-            <div className="bg-trinity p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-secondary p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
                 <FaEnvelope className="text-[32px] text-accent" />
               </div>
               <h3 className="font-semibold text-2xl text-accent">Email</h3>
               <p className="text-white mt-2">kasunsagara689@gmail.com</p>
             </div>
-            <div className="bg-trinity p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-secondary p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
                 <FaPhoneAlt className="text-[32px] text-accent" />
               </div>
               <h3 className="font-semibold text-2xl text-accent">Phone</h3>
               <p className="text-white mt-2">0771670585</p>
             </div>
-            <div className="bg-trinity p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-secondary p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
                 <FaMapMarkerAlt className="text-[32px] text-accent" />
               </div>
