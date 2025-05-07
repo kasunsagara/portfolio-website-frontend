@@ -11,7 +11,6 @@ export default {
       colors: {
         primary: "#1a1a1a",
         secondary: "#2c2c2c",        
-        tertiary: "#282828",
         accent: "#00ffff", 
       },
       animation: {
