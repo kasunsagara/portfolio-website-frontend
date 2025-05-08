@@ -1,7 +1,7 @@
 // src/components/AdminPanel.jsx
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaTools, FaFolderOpen, FaEnvelope  } from 'react-icons/fa';
+import { useNavigate, Link } from 'react-router-dom';
+import { FaTools, FaFolderOpen, FaEnvelope } from 'react-icons/fa';
 
 export default function AdminPanel() {
   const navigate = useNavigate();
@@ -12,27 +12,42 @@ export default function AdminPanel() {
   };
 
   return (
-    <div className="min-h-screen bg-primary flex flex-col items-center justify-start py-10 px-4">
-      <div className="bg-secondary shadow-lg rounded-2xl w-full max-w-3xl p-8">
+    <div className="min-h-screen flex items-center justify-center bg-primary px-4">
+      <div className="max-w-2xl w-full bg-secondary shadow-lg rounded-2xl p-8">
         <h1 className="text-3xl font-bold text-accent">Admin Panel</h1>
         <p className="mt-2 text-white">
-          Welcome <span className="font-semibold">Kasun</span>! This is your private admin panel.
+          Welcome Kasun! This is your private admin panel.
         </p>
 
         <div className="mt-8">
           <h3 className="text-xl font-semibold text-white mb-4">Manage Content</h3>
           <ul className="space-y-4">
-            <li className="flex items-center gap-3 text-white hover:text-accent transition">
-              <FaTools className="text-lg" />
-              <span>Skills</span>
+            <li>
+              <Link
+                to="/admin-panel/skills"
+                className="flex items-center gap-3 text-white hover:text-accent transition"
+              >
+                <FaTools className="text-lg" />
+                <span>Skills</span>
+              </Link>
             </li>
-            <li className="flex items-center gap-3 text-white hover:text-accent transition">
-              <FaFolderOpen className="text-lg" />
-              <span>Projects</span>
+            <li>
+              <Link
+                to="/admin-panel/projects"
+                className="flex items-center gap-3 text-white hover:text-accent transition"
+              >
+                <FaFolderOpen className="text-lg" />
+                <span>Projects</span>
+              </Link>
             </li>
-            <li className="flex items-center gap-3 text-white hover:text-accent transition">
-              <FaEnvelope className="text-lg" />
-              <span>Messages</span>
+            <li>
+              <Link
+                to="/admin-panel/messages"
+                className="flex items-center gap-3 text-white hover:text-accent transition"
+              >
+                <FaEnvelope className="text-lg" />
+                <span>Messages</span>
+              </Link>
             </li>
           </ul>
         </div>
@@ -47,5 +62,3 @@ export default function AdminPanel() {
     </div>
   );
 };
-
-
