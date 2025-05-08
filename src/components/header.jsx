@@ -12,8 +12,7 @@ export default function Header() {
 
       if (
         keysPressed.current['k'] &&
-        keysPressed.current['s'] &&
-        keysPressed.current['w']
+        keysPressed.current['s'] 
       ) {
         navigate('/admin-login');
       }
