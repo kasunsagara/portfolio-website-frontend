@@ -1,23 +1,35 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminLogin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
-    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
+    try {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auths/admin-login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    if (email === adminEmail && password === adminPassword) {
-      localStorage.setItem("isAdmin", "true");
-      navigate("/admin-panel");
-    } else {
-      setError("Invalid credentials");
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("isAdmin", "true");
+        navigate("/admin-panel");
+      } else {
+        setError(data.message || "Login failed");
+      }
+    } catch (err) {
+      setError("Something went wrong. Try again.");
     }
   };
 
@@ -36,7 +48,6 @@ export default function AdminLogin() {
               required
             />
           </div>
-
           <div>
             <label className="block text-sm font-medium text-white mb-1">Admin Password</label>
             <input
@@ -47,9 +58,7 @@ export default function AdminLogin() {
               required
             />
           </div>
-
           {error && <p className="text-red-500 text-sm">{error}</p>}
-
           <button
             type="submit"
             className="w-full text-lg font-semibold bg-accent text-black py-2 rounded-lg hover:bg-gray-700 hover:text-white transition duration-200"
@@ -60,6 +69,4 @@ export default function AdminLogin() {
       </div>
     </div>
   );
-};
-
-
+}
