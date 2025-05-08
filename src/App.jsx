@@ -7,8 +7,11 @@ import Services from './components/services';
 import Projects from './components/projects';
 import Contact from './components/contact';
 import Footer from './components/footer';
-import AdminLogin from './pages/AdminLogin';
-import AdminPanel from './pages/AdminPanel';
+import AdminLogin from './pages/adminLogin';
+import AdminPanel from './pages/adminPanel';
+import AdminSkills from './pages/adminSkills';
+import AdminProjects from './pages/adminProjects'; 
+import AdminMessages from './pages/adminMessages';
 
 const App = () => {
   const isAdmin = localStorage.getItem("isAdmin") === "true";
@@ -30,10 +33,15 @@ const App = () => {
 
         <Route path="/admin-login" element={<AdminLogin />} />
 
+        {/* Admin panel and nested routes */}
         <Route
           path="/admin-panel"
           element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />}
-        />
+        >
+          <Route path="skills" element={<AdminSkills />} />
+          <Route path="projects" element={<AdminProjects />} />
+          <Route path="messages" element={<AdminMessages />} />
+        </Route>
       </Routes>
     </Router>
   );
