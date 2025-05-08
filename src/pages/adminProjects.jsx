@@ -38,7 +38,7 @@ const AdminProject = () => {
   };
 
   const handleEdit = (id) => {
-    navigate(`/admin/edit-project/${id}`); // ✅ navigate to edit page
+    navigate(`/admin-panel/projects/edit-project/${id}`); // ✅ navigate to edit page
   };
 
   if (loading) return <p>Loading...</p>;
@@ -48,7 +48,7 @@ const AdminProject = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-semibold text-accent">Manage Projects</h2>
         <button
-          onClick={() => navigate("/admin/add-project")} // ✅ navigate to add
+          onClick={() => navigate("/admin-panel/projects/add-project")} // ✅ navigate to add
           className="font-semibold text-white bg-green-500 hover:bg-green-700 px-4 py-2 rounded text-sm"
         >
           Add Project

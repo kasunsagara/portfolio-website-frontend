@@ -2,14 +2,13 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const AddSkill = () => {
+const AddService = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     icon: '',
-    name: '',
-    desc: '',
-    category: 'frontend',
+    title: '',
+    description: '',
   });
 
   const [message, setMessage] = useState('');
@@ -17,9 +16,8 @@ const AddSkill = () => {
 
   const inputRefs = {
     icon: useRef(null),
-    name: useRef(null),
-    desc: useRef(null),
-    category: useRef(null),
+    title: useRef(null),
+    description: useRef(null),
   };
 
   const handleChange = (e) => {
@@ -41,24 +39,23 @@ const AddSkill = () => {
     setError('');
 
     try {
-      const res = await axios.post(import.meta.env.VITE_BACKEND_URL + "/api/skills", formData);
-      setMessage('Skill added successfully!');
-      navigate('/admin-panel/skills');
+      const res = await axios.post(import.meta.env.VITE_BACKEND_URL + "/api/services", formData);
+      setMessage('Service added successfully!');
+      navigate('/admin-panel/services');
       
       setFormData({
         icon: '',
-        name: '',
-        desc: '',
-        category: 'frontend',
+        title: '',
+        description: '',
       });
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to add skill');
+      setError(err.response?.data?.error || 'Failed to add service');
     }
   };
 
   return (
     <div className="max-w-md mx-auto p-6 bg-gray-700 shadow-2xl rounded-2xl">
-      <h2 className="text-2xl text-center text-accent font-bold mb-6">Add Skill</h2>
+      <h2 className="text-2xl text-center text-accent font-bold mb-6">Add Service</h2>
 
       {message && <p className="text-green-500 mb-4">{message}</p>}
       {error && <p className="text-red-500 mb-4">{error}</p>}
@@ -72,21 +69,21 @@ const AddSkill = () => {
             name="icon"
             value={formData.icon}
             onChange={handleChange}
-            onKeyDown={(e) => handleKeyDown(e, inputRefs.name)}
+            onKeyDown={(e) => handleKeyDown(e, inputRefs.title)}
             className="w-full border rounded p-2"
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-white mb-1">Name</label>
+          <label className="block text-sm font-medium text-white mb-1">Title</label>
           <input
-            ref={inputRefs.name}
+            ref={inputRefs.title}
             type="text"
-            name="name"
-            value={formData.name}
+            name="title"
+            value={formData.title}
             onChange={handleChange}
-            onKeyDown={(e) => handleKeyDown(e, inputRefs.desc)}
+            onKeyDown={(e) => handleKeyDown(e, inputRefs.description)}
             className="w-full border rounded p-2"
             required
           />
@@ -95,42 +92,24 @@ const AddSkill = () => {
         <div>
           <label className="block text-sm font-medium text-white mb-1">Description</label>
           <textarea
-            ref={inputRefs.desc}
-            name="desc"
-            value={formData.desc}
+            ref={inputRefs.description}
+            name="description"
+            value={formData.description}
             onChange={handleChange}
-            onKeyDown={(e) => handleKeyDown(e, inputRefs.category)}
             className="w-full border rounded p-2"
             required
           />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-white mb-1">Category</label>
-          <select
-            ref={inputRefs.category}
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            className="w-full border rounded p-2"
-            required
-          >
-            <option value="frontend">Frontend</option>
-            <option value="backend">Backend</option>
-            <option value="database">Database</option>
-            <option value="tools">Tools</option>
-          </select>
         </div>
 
         <button
           type="submit"
           className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-200"
         >
-          Add Skill
+          Add Service
         </button>
       </form>
     </div>
   );
 };
 
-export default AddSkill;
+export default AddService;

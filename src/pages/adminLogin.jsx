@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function AdminLogin() {
@@ -6,6 +6,9 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  const passwordRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -45,6 +48,12 @@ export default function AdminLogin() {
               className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  passwordRef.current?.focus();
+                }
+              }}
               required
             />
           </div>
@@ -52,15 +61,23 @@ export default function AdminLogin() {
             <label className="block text-sm font-medium text-white mb-1">Admin Password</label>
             <input
               type="password"
+              ref={passwordRef}
               className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent mb-4"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  buttonRef.current?.focus();
+                }
+              }}
               required
             />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
           <button
             type="submit"
+            ref={buttonRef}
             className="w-full text-lg font-semibold bg-accent text-black py-2 rounded-lg hover:bg-gray-700 hover:text-white transition duration-200"
           >
             Login

@@ -10,7 +10,14 @@ import Footer from './components/footer';
 import AdminLogin from './pages/adminLogin';
 import AdminPanel from './pages/adminPanel';
 import AdminSkills from './pages/adminSkills';
+import AddSkill from './pages/addSkill';
+import EditSkill from './pages/editSkill';
+import AdminServices from './pages/adminServices';
+import AddService from './pages/addService';
+import EditService from './pages/editService';
 import AdminProjects from './pages/adminProjects'; 
+import AddProject from './pages/addProject';
+import EditProject from './pages/editProject';
 import AdminMessages from './pages/adminMessages';
 
 const App = () => {
@@ -39,7 +46,14 @@ const App = () => {
           element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />}
         >
           <Route path="skills" element={<AdminSkills />} />
+          <Route path="skills/add-skill" element={<AddSkill />} />
+          <Route path="skills/edit-skill/:id" element={<EditSkill />} />
+          <Route path="services" element={<AdminServices />} />
+          <Route path="services/add-service" element={<AddService />} />
+          <Route path="services/edit-service/:id" element={<EditService />} />
           <Route path="projects" element={<AdminProjects />} />
+          <Route path="projects/add-project" element={<AddProject />} />
+          <Route path="projects/edit-project/:id" element={<EditProject />} />
           <Route path="messages" element={<AdminMessages />} />
         </Route>
       </Routes>

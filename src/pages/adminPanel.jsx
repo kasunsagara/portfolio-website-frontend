@@ -1,7 +1,5 @@
-// src/components/AdminPanel.jsx
 import React from 'react';
 import { useNavigate, Link, Outlet } from 'react-router-dom';
-import { FaTools, FaFolderOpen, FaEnvelope } from 'react-icons/fa';
 
 export default function AdminPanel() {
   const navigate = useNavigate();
@@ -24,27 +22,32 @@ export default function AdminPanel() {
             <li>
               <Link
                 to="skills"
-                className="flex items-center gap-3 text-white hover:text-accent transition"
+                className="flex flex-row items-center mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
-                <FaTools className="text-lg" />
                 <span>Skills</span>
               </Link>
             </li>
             <li>
               <Link
-                to="projects"
-                className="flex items-center gap-3 text-white hover:text-accent transition"
+                to="services"
+                className="flex flex-row items-center mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
-                <FaFolderOpen className="text-lg" />
+                <span>Services</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="projects"
+                className="flex flex-row items-center mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
+              >
                 <span>Projects</span>
               </Link>
             </li>
             <li>
               <Link
                 to="messages"
-                className="flex items-center gap-3 text-white hover:text-accent transition"
+                className="flex flex-row items-center mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
-                <FaEnvelope className="text-lg" />
                 <span>Messages</span>
               </Link>
             </li>
