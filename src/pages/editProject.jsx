@@ -83,7 +83,7 @@ export default function EditProject() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-gray-700 shadow-2xl rounded-2xl">
+    <div className="max-w-2xl mx-auto p-8 m-16 bg-secondary shadow-2xl rounded-2xl">
       <h2 className="text-2xl text-center text-accent font-bold mb-6">Edit Project</h2>
 
       {error && <p className="text-red-500 mb-4">{error}</p>}

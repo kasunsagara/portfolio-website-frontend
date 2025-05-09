@@ -53,7 +53,7 @@ export default function AddSkill() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-gray-700 shadow-2xl rounded-2xl">
+    <div className="max-w-2xl mx-auto p-8 m-16 bg-secondary shadow-2xl rounded-2xl">
       <h2 className="text-2xl text-center text-accent font-bold mb-6">Add Skill</h2>
 
       <form onSubmit={handleSubmit} className="space-y-5">

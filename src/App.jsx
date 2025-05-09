@@ -20,6 +20,7 @@ import AdminProjects from './pages/adminProjects';
 import AddProject from './pages/addProject';
 import EditProject from './pages/editProject';
 import AdminMessages from './pages/adminMessages';
+import AdminHome from './pages/adminHome';
 
 const App = () => {
   const isAdmin = localStorage.getItem("isAdmin") === "true";
@@ -47,6 +48,7 @@ const App = () => {
           path="/admin-panel"
           element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />}
         >
+          <Route path="" element={<AdminHome />} />
           <Route path="skills" element={<AdminSkills />} />
           <Route path="skills/add-skill" element={<AddSkill />} />
           <Route path="skills/edit-skill/:id" element={<EditSkill />} />

@@ -10,14 +10,12 @@ export default function AdminPanel() {
   };
 
   return (
-    <div className="min-h-screen flex items-start bg-primary px-4 py-10 gap-10">
+    <div className="w-full h-screen flex">
       {/* Sidebar */}
-      <div className="w-full max-w-xs bg-secondary shadow-lg rounded-2xl p-8">
+      <div className="w-[20%] h-screen bg-secondary flex-col shadow-lg p-8">
         <h1 className="text-3xl font-bold text-accent">Admin Panel</h1>
-        <p className="mt-2 text-white">Welcome Kasun! This is your private admin panel.</p>
 
         <div className="mt-8">
-          <h3 className="text-xl font-semibold text-white mb-4">Manage Content</h3>
           <ul className="space-y-4">
             <li>
               <Link
@@ -63,7 +61,7 @@ export default function AdminPanel() {
       </div>
 
       {/* Render nested routes here */}
-      <div className="flex-1 w-full max-w-6xl bg-secondary rounded-xl p-4 shadow-lg">
+      <div className="w-[80%] h-screen overflow-auto bg-primary">
         <Outlet />
       </div>
     </div>
