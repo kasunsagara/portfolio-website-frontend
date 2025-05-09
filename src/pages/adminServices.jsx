@@ -64,7 +64,7 @@ export default function AdminServices() {
         </thead>
         <tbody>
           {services.map((service) => (
-            <tr key={service._id} className="border-b">
+            <tr key={service._id} className="border-b bg-secondary">
               <td className="p-2 border">{service.icon}</td>
               <td className="p-2 border">{service.title}</td>
               <td className="p-2 border">{service.description}</td>

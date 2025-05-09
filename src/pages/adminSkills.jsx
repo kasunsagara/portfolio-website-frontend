@@ -64,7 +64,7 @@ export default function AdminSkills() {
         </thead>
         <tbody>
           {skills.map((skill) => (
-            <tr key={skill._id} className="border-b">
+            <tr key={skill._id} className="border-b bg-secondary">
               <td className="p-2 border">{skill.icon}</td>
               <td className="p-2 border">{skill.name}</td>
               <td className="p-2 border">{skill.desc}</td>

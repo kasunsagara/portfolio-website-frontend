@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast'; 
 import Header from './components/header';
 import Home from './components/home';
@@ -26,7 +26,7 @@ const App = () => {
   const isAdmin = localStorage.getItem("isAdmin") === "true";
 
   return (
-    <Router>
+    <BrowserRouter>
       <Toaster position="top-right"/>
       <Routes>
         <Route path="/" element={
@@ -61,7 +61,7 @@ const App = () => {
           <Route path="messages" element={<AdminMessages />} />
         </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 

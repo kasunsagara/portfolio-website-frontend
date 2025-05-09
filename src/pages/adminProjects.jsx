@@ -70,7 +70,7 @@ export default function AdminProjects() {
         </thead>
         <tbody>
           {projects.map((project) => (
-            <tr key={project._id} className="border-b">
+            <tr key={project._id} className="border-b bg-secondary">
               <td className="p-2 border">
                 <img
                   src={project.image}

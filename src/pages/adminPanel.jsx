@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, Link, Outlet } from 'react-router-dom';
+import { FaTools, FaConciergeBell, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; // Icons
 
 export default function AdminPanel() {
   const navigate = useNavigate();
@@ -20,32 +21,36 @@ export default function AdminPanel() {
             <li>
               <Link
                 to="skills"
-                className="flex flex-row items-center mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
+                className="flex items-center gap-3 mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
+                <FaTools />
                 <span>Skills</span>
               </Link>
             </li>
             <li>
               <Link
                 to="services"
-                className="flex flex-row items-center mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
+                className="flex items-center gap-3 mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
+                <FaConciergeBell />
                 <span>Services</span>
               </Link>
             </li>
             <li>
               <Link
                 to="projects"
-                className="flex flex-row items-center mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
+                className="flex items-center gap-3 mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
+                <FaProjectDiagram />
                 <span>Projects</span>
               </Link>
             </li>
             <li>
               <Link
                 to="messages"
-                className="flex flex-row items-center mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
+                className="flex items-center gap-3 mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
+                <FaEnvelope />
                 <span>Messages</span>
               </Link>
             </li>
