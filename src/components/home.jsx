@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { toast } from 'react-hot-toast';
 
 export default function Home() {
   const roles = [
@@ -28,6 +29,7 @@ export default function Home() {
       id="home"
       className="flex items-center justify-center min-h-screen bg-primary px-4 mt-16"
     >
+
       <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-8 text-center md:text-left -mt-20">
         {/* Text content */}
         <div className="max-w-lg z-16">
@@ -85,10 +87,11 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Download CV Button */}
+          {/* Download CV Button with Toast */}
           <a
             href="/Kasun_Sagara_CV.pdf" // Place the PDF in your public folder
             download
+            onClick={() => toast.success("CV download started!")}
             className="inline-block py-2 px-6 text-lg font-semibold bg-accent text-black rounded-lg shadow-lg hover:bg-gray-700 hover:text-white transition duration-300 z-10 relative"
           >
             Download CV
@@ -112,5 +115,4 @@ export default function Home() {
       </div>
     </section>
   );
-};
-
+}

@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const passwordRef = useRef(null);
@@ -27,12 +27,13 @@ export default function AdminLogin() {
       if (res.ok) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("isAdmin", "true");
+        toast.success("Login successfully");
         navigate("/admin-panel");
       } else {
-        setError(data.message || "Login failed");
+        toast.error(data.message || "Login failed");
       }
     } catch (err) {
-      setError("Something went wrong. Try again.");
+      toast.error("Something went wrong. Try again.");
     }
   };
 
@@ -74,7 +75,6 @@ export default function AdminLogin() {
               required
             />
           </div>
-          {error && <p className="text-red-500 text-sm">{error}</p>}
           <button
             type="submit"
             ref={buttonRef}

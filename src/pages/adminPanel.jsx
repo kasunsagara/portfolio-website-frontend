@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigate, Link, Outlet } from 'react-router-dom';
-import { FaTools, FaConciergeBell, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; // Icons
+import { FaTools, FaHandshake, FaFolderOpen, FaEnvelope } from 'react-icons/fa'; // Icons
+import { toast } from "react-hot-toast";
 
 export default function AdminPanel() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("isAdmin");
+    toast.success("Logout successfully");
     navigate('/');
   };
 
@@ -32,7 +34,7 @@ export default function AdminPanel() {
                 to="services"
                 className="flex items-center gap-3 mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
-                <FaConciergeBell />
+                <FaHandshake />
                 <span>Services</span>
               </Link>
             </li>
@@ -41,7 +43,7 @@ export default function AdminPanel() {
                 to="projects"
                 className="flex items-center gap-3 mb-6 text-base font-medium text-white rounded-lg hover:bg-gray-700 hover:text-white py-2 px-4 transition-all duration-300"
               >
-                <FaProjectDiagram />
+                <FaFolderOpen />
                 <span>Projects</span>
               </Link>
             </li>

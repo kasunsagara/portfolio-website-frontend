@@ -1,12 +1,12 @@
 import { useState, useRef } from 'react';
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
 
-  // Refs for inputs
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
@@ -28,8 +28,9 @@ export default function Contact() {
     try {
       await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contacts`, formData);
       setFormData({ name: '', email: '', message: '' });
+      toast.success('Message sent successfully!');
     } catch (error) {
-      // Handle silently
+      toast.error('Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -90,7 +91,7 @@ export default function Contact() {
                   : 'bg-accent text-black hover:bg-gray-700 hover:text-white'
               }`}
             >
-              {loading ? 'Sending...' : 'Send Message'}
+              Send Message
             </button>
           </form>
 
