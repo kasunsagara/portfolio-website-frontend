@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import uploadMediaToSupabase from '../utils/mediaUpload'; // Adjust the path as needed
+import { toast } from 'react-hot-toast'; // ✅ Import toast
 
-const AddProject = () => {
+export default function AddProject() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -17,8 +18,6 @@ const AddProject = () => {
   });
 
   const [imageFile, setImageFile] = useState(null);
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
 
   const inputRefs = {
     name: useRef(null),
@@ -49,30 +48,25 @@ const AddProject = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
-    setError('');
 
     try {
       if (!imageFile) {
-        setError("Please select an image.");
+        toast.error("Please select an image.");
         return;
       }
 
-      // Upload image to Supabase
       const imageUrl = await uploadMediaToSupabase(imageFile);
 
-      // Prepare final data
       const data = {
         ...formData,
         image: imageUrl,
-        skills: formData.skills.split(',').map((skill) => skill.trim()), // Convert to array
+        skills: formData.skills.split(',').map((skill) => skill.trim()),
       };
 
-      // Send project data to backend
       await axios.post(import.meta.env.VITE_BACKEND_URL + "/api/projects", data);
-      setMessage('Project added successfully!');
+      toast.success('Project added successfully!');
       navigate('/admin-panel/projects');
-      
+
       setFormData({
         name: '',
         description: '',
@@ -84,16 +78,13 @@ const AddProject = () => {
       });
       setImageFile(null);
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to add project');
+      toast.error(err.response?.data?.message || 'Failed to add project');
     }
   };
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-gray-700 shadow-2xl rounded-2xl">
       <h2 className="text-2xl text-center text-accent font-bold mb-6">Add Project</h2>
-
-      {message && <p className="text-green-500 mb-4">{message}</p>}
-      {error && <p className="text-red-500 mb-4">{error}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
@@ -217,4 +208,4 @@ const AddProject = () => {
   );
 };
 
-export default AddProject;
+

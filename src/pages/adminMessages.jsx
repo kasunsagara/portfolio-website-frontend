@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
-const AdminMessages = () => {
+export default function AdminMessages() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -22,14 +23,12 @@ const AdminMessages = () => {
   };
 
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this message?");
-    if (!confirmDelete) return;
-
     try {
       await axios.delete(
         `${import.meta.env.VITE_BACKEND_URL}/api/contacts/${id}`
       );
       setMessages(messages.filter((msg) => msg._id !== id));
+      toast.success("Message deleted successfully");
     } catch (err) {
       console.error("Error deleting message:", err);
     }
@@ -56,15 +55,17 @@ const AdminMessages = () => {
               <td className="p-2 border">{msg.name}</td>
               <td className="p-2 border">{msg.email}</td>
               <td className="p-2 border">{msg.message}</td>
-              <td className="p-2 border">{new Date(msg.submittedAt).toLocaleDateString()}</td>
               <td className="p-2 border">
-              <div className="flex items-center gap-2">
-                <button
-                  className="bg-red-500 text-white hover:bg-red-700 px-2 py-1 text-sm rounded"
-                  onClick={() => handleDelete(msg._id)}
-                >
-                  Delete
-                </button>
+                {new Date(msg.submittedAt).toLocaleDateString()}
+              </td>
+              <td className="p-2 border">
+                <div className="flex items-center gap-2">
+                  <button
+                    className="bg-red-500 text-white hover:bg-red-700 px-2 py-1 text-sm rounded"
+                    onClick={() => handleDelete(msg._id)}
+                  >
+                    Delete
+                  </button>
                 </div>
               </td>
             </tr>
@@ -75,4 +76,4 @@ const AdminMessages = () => {
   );
 };
 
-export default AdminMessages;
+

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast'; // Import react-hot-toast
 
-const EditSkill = () => {
+export default function EditSkill() {
   const navigate = useNavigate();
   const { id } = useParams(); // Get skill ID from URL
 
@@ -13,7 +14,6 @@ const EditSkill = () => {
     category: 'frontend',
   });
 
-  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -23,6 +23,7 @@ const EditSkill = () => {
         setFormData(res.data);
       } catch (err) {
         setError('Failed to load skill data');
+        toast.error('Failed to load skill data'); // Show error toast
       }
     };
     fetchSkill();
@@ -37,16 +38,15 @@ const EditSkill = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
     setError('');
 
     try {
       const res = await axios.put(import.meta.env.VITE_BACKEND_URL + `/api/skills/${id}`, formData);
-      setMessage('Skill updated successfully!');
+      toast.success('Skill updated successfully!'); // Show success toast
       navigate('/admin-panel/skills');
-
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to update skill');
+      toast.error(err.response?.data?.error || 'Failed to update skill'); // Show error toast
     }
   };
 
@@ -54,8 +54,7 @@ const EditSkill = () => {
     <div className="max-w-md mx-auto p-6 bg-gray-700 shadow-2xl rounded-2xl">
       <h2 className="text-2xl text-center text-accent font-bold mb-6">Edit Skill</h2>
 
-      {message && <p className="text-green-500 mb-4">{message}</p>}
-      {error && <p className="text-red-500 mb-4">{error}</p>}
+      {error && <p className="text-red-500 mb-4">{error}</p>} {/* Display error message */}
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
@@ -120,4 +119,3 @@ const EditSkill = () => {
   );
 };
 
-export default EditSkill;

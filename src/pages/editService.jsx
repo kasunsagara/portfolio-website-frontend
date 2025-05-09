@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-hot-toast'; // Import react-hot-toast
 
-const EditService = () => {
+export default function EditService() {
   const navigate = useNavigate();
   const { id } = useParams(); // To get the service ID from URL params
 
@@ -12,9 +13,6 @@ const EditService = () => {
     description: '',
   });
 
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
-
   // Fetch the service data to populate the form when editing
   useEffect(() => {
     const fetchService = async () => {
@@ -22,7 +20,7 @@ const EditService = () => {
         const res = await axios.get(import.meta.env.VITE_BACKEND_URL + `/api/services/${id}`);
         setFormData(res.data);
       } catch (err) {
-        setError('Failed to fetch service data');
+        toast.error('Failed to fetch service data'); // Show error toast
       }
     };
 
@@ -38,24 +36,19 @@ const EditService = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
-    setError('');
 
     try {
       const res = await axios.put(import.meta.env.VITE_BACKEND_URL + `/api/services/${id}`, formData);
-      setMessage('Service updated successfully!');
+      toast.success('Service updated successfully!'); // Show success toast
       navigate('/admin-panel/services');
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to update service');
+      toast.error(err.response?.data?.error || 'Failed to update service'); // Show error toast
     }
   };
 
   return (
     <div className="max-w-md mx-auto p-6 bg-gray-700 shadow-2xl rounded-2xl">
       <h2 className="text-2xl text-center text-accent font-bold mb-6">Edit Service</h2>
-
-      {message && <p className="text-green-500 mb-4">{message}</p>}
-      {error && <p className="text-red-500 mb-4">{error}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
@@ -104,4 +97,4 @@ const EditService = () => {
   );
 };
 
-export default EditService;
+

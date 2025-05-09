@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast'; 
 import Header from './components/header';
 import Home from './components/home';
 import About from './components/about';
@@ -25,6 +26,7 @@ const App = () => {
 
   return (
     <Router>
+      <Toaster position="top-right"/>
       <Routes>
         <Route path="/" element={
           <>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-hot-toast"; // ✅ Import toast
 
-const AdminSkills = () => {
+export default function AdminSkills() {
   const [skills, setSkills] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -24,12 +25,10 @@ const AdminSkills = () => {
   };
 
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this skill?");
-    if (!confirmDelete) return;
-
     try {
       await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/skills/${id}`);
       setSkills(skills.filter((skill) => skill._id !== id));
+      toast.success("Skill deleted successfully"); // ✅ Toast after deletion
     } catch (err) {
       console.error("Error deleting skill:", err);
     }
@@ -94,4 +93,4 @@ const AdminSkills = () => {
   );
 };
 
-export default AdminSkills;
+

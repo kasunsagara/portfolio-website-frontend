@@ -1,8 +1,9 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
-const AddSkill = () => {
+export default function AddSkill() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -11,9 +12,6 @@ const AddSkill = () => {
     desc: '',
     category: 'frontend',
   });
-
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
 
   const inputRefs = {
     icon: useRef(null),
@@ -37,12 +35,10 @@ const AddSkill = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
-    setError('');
 
     try {
       const res = await axios.post(import.meta.env.VITE_BACKEND_URL + "/api/skills", formData);
-      setMessage('Skill added successfully!');
+      toast.success('Skill added successfully!');
       navigate('/admin-panel/skills');
       
       setFormData({
@@ -52,16 +48,13 @@ const AddSkill = () => {
         category: 'frontend',
       });
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to add skill');
+      toast.error(err.response?.data?.error || 'Failed to add skill');
     }
   };
 
   return (
     <div className="max-w-md mx-auto p-6 bg-gray-700 shadow-2xl rounded-2xl">
       <h2 className="text-2xl text-center text-accent font-bold mb-6">Add Skill</h2>
-
-      {message && <p className="text-green-500 mb-4">{message}</p>}
-      {error && <p className="text-red-500 mb-4">{error}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
@@ -133,4 +126,4 @@ const AddSkill = () => {
   );
 };
 
-export default AddSkill;
+

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import uploadMediaToSupabase from '../utils/mediaUpload'; // Adjust the path
+import { toast } from 'react-hot-toast'; // Import toast
 
-const EditProject = () => {
+export default function EditProject() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -19,7 +20,6 @@ const EditProject = () => {
 
   const [imageFile, setImageFile] = useState(null);
   const [existingImage, setExistingImage] = useState('');
-  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const EditProject = () => {
         });
         setExistingImage(project.image);
       } catch (err) {
-        setError('Failed to load project');
+        toast.error('Failed to load project'); // Show error toast
       }
     };
 
@@ -58,7 +58,6 @@ const EditProject = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
     setError('');
 
     try {
@@ -76,10 +75,10 @@ const EditProject = () => {
 
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/projects/${id}`, data);
 
-      setMessage('Project updated successfully!');
+      toast.success('Project updated successfully!'); // Show success toast
       navigate('/admin-panel/projects'); // Adjust the route if needed
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to update project');
+      toast.error(err.response?.data?.message || 'Failed to update project'); // Show error toast
     }
   };
 
@@ -87,7 +86,6 @@ const EditProject = () => {
     <div className="max-w-2xl mx-auto p-6 bg-gray-700 shadow-2xl rounded-2xl">
       <h2 className="text-2xl text-center text-accent font-bold mb-6">Edit Project</h2>
 
-      {message && <p className="text-green-500 mb-4">{message}</p>}
       {error && <p className="text-red-500 mb-4">{error}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -200,4 +198,4 @@ const EditProject = () => {
   );
 };
 
-export default EditProject;
+

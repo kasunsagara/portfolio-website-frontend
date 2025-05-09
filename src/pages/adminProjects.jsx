@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ import for navigation
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-hot-toast"; // ✅ import toast
 
-const AdminProject = () => {
+export default function AdminProjects() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); // ✅ initialize navigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProjects();
@@ -24,21 +25,19 @@ const AdminProject = () => {
   };
 
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this project?");
-    if (!confirmDelete) return;
-
     try {
       await axios.delete(
         `${import.meta.env.VITE_BACKEND_URL}/api/projects/${id}`
       );
       setProjects(projects.filter((project) => project._id !== id));
+      toast.success("Project deleted successfully"); // ✅ show toast
     } catch (err) {
       console.error("Error deleting project:", err);
     }
   };
 
   const handleEdit = (id) => {
-    navigate(`/admin-panel/projects/edit-project/${id}`); // ✅ navigate to edit page
+    navigate(`/admin-panel/projects/edit-project/${id}`);
   };
 
   if (loading) return <p>Loading...</p>;
@@ -48,7 +47,7 @@ const AdminProject = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-semibold text-accent">Manage Projects</h2>
         <button
-          onClick={() => navigate("/admin-panel/projects/add-project")} // ✅ navigate to add
+          onClick={() => navigate("/admin-panel/projects/add-project")}
           className="font-semibold text-white bg-green-500 hover:bg-green-700 px-4 py-2 rounded text-sm"
         >
           Add Project
@@ -114,7 +113,7 @@ const AdminProject = () => {
                   </button>
                   <button
                     className="bg-blue-500 text-white hover:bg-blue-700 px-2 py-1 text-sm rounded"
-                    onClick={() => handleEdit(project._id)} // ✅ use handler
+                    onClick={() => handleEdit(project._id)}
                   >
                     Edit
                   </button>
@@ -128,4 +127,4 @@ const AdminProject = () => {
   );
 };
 
-export default AdminProject;
+
