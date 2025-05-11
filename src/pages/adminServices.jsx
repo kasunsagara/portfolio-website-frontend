@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 // Import icon libraries
 import * as FaIcons from "react-icons/fa";
@@ -19,7 +20,7 @@ const getIconComponent = (iconName) => {
     ...BsIcons,
   };
   const Icon = iconLibraries[iconName];
-  return Icon ? <Icon className="text-2xl text-accent" /> : null;
+  return Icon ? <Icon className="text-2xl" /> : null;
 };
 
 export default function AdminServices() {
@@ -44,12 +45,10 @@ export default function AdminServices() {
   };
 
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this service?");
-    if (!confirmDelete) return;
-
     try {
       await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/services/${id}`);
       setServices(services.filter((service) => service._id !== id));
+      toast.success("Service deleted successfully"); 
     } catch (err) {
       console.error("Error deleting service:", err);
     }
@@ -86,7 +85,6 @@ export default function AdminServices() {
           {services.map((service) => (
             <tr key={service._id} className="border-b bg-secondary">
               <td className="p-2 border">
-                {/* Render Icon */}
                 {getIconComponent(service.icon)}
               </td>
               <td className="p-2 border">{service.title}</td>

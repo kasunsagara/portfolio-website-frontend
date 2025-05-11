@@ -10,9 +10,9 @@ export default function AddProject() {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
+    skills: '',
     startDate: '',
     endDate: '',
-    skills: '',
     githubLink: '',
     linkedinLink: '',
   });
@@ -22,9 +22,9 @@ export default function AddProject() {
   const inputRefs = {
     name: useRef(null),
     description: useRef(null),
+    skills: useRef(null),
     startDate: useRef(null),
     endDate: useRef(null),
-    skills: useRef(null),
     githubLink: useRef(null),
     linkedinLink: useRef(null),
   };
@@ -70,9 +70,9 @@ export default function AddProject() {
       setFormData({
         name: '',
         description: '',
+        skills: '',
         startDate: '',
         endDate: '',
-        skills: '',
         githubLink: '',
         linkedinLink: '',
       });
@@ -120,11 +120,25 @@ export default function AddProject() {
             name="description"
             value={formData.description}
             onChange={handleChange}
-            onKeyDown={(e) => handleKeyDown(e, inputRefs.startDate)}
+            onKeyDown={(e) => handleKeyDown(e, inputRefs.skills)}
             className="w-full border rounded p-2"
             required
           ></textarea>
         </div>
+
+        <div>
+          <label className="block text-sm text-white mb-1">Skills</label>
+          <input
+            ref={inputRefs.skills}
+            type="text"
+            name="skills"
+            value={formData.skills}
+            onChange={handleChange}
+            onKeyDown={(e) => handleKeyDown(e, inputRefs.startDate)}
+            className="w-full border rounded p-2"
+            required
+          />
+        </div>        
 
         <div className="flex gap-4">
           <div className="w-1/2">
@@ -149,25 +163,11 @@ export default function AddProject() {
               name="endDate"
               value={formData.endDate}
               onChange={handleChange}
-              onKeyDown={(e) => handleKeyDown(e, inputRefs.skills)}
+              onKeyDown={(e) => handleKeyDown(e, inputRefs.githubLink)}
               className="w-full border rounded p-2"
               required
             />
           </div>
-        </div>
-
-        <div>
-          <label className="block text-sm text-white mb-1">Skills</label>
-          <input
-            ref={inputRefs.skills}
-            type="text"
-            name="skills"
-            value={formData.skills}
-            onChange={handleChange}
-            onKeyDown={(e) => handleKeyDown(e, inputRefs.githubLink)}
-            className="w-full border rounded p-2"
-            required
-          />
         </div>
 
         <div>

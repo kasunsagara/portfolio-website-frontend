@@ -53,7 +53,7 @@ export default function AdminSkills() {
       ...BsIcons,
     };
     const Icon = iconLibraries[iconName];
-    return Icon ? <Icon className="text-2xl text-accent" /> : null;
+    return Icon ? <Icon className="text-2xl" /> : null;
   };
 
   if (loading) return <p>Loading...</p>;

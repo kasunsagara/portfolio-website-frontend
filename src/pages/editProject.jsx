@@ -11,9 +11,9 @@ export default function EditProject() {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
+    skills: '',
     startDate: '',
     endDate: '',
-    skills: '',
     githubLink: '',
     linkedinLink: '',
   });
@@ -30,9 +30,9 @@ export default function EditProject() {
         setFormData({
           name: project.name,
           description: project.description,
+          skills: project.skills.join(', '),
           startDate: project.startDate.slice(0, 10),
           endDate: project.endDate.slice(0, 10),
-          skills: project.skills.join(', '),
           githubLink: project.githubLink,
           linkedinLink: project.linkedinLink,
         });
@@ -125,6 +125,18 @@ export default function EditProject() {
           ></textarea>
         </div>
 
+        <div>
+          <label className="block text-sm text-white mb-1">Skills</label>
+          <input
+            type="text"
+            name="skills"
+            value={formData.skills}
+            onChange={handleChange}
+            className="w-full border rounded p-2"
+            required
+          />
+        </div>        
+
         <div className="flex gap-4">
           <div className="w-1/2">
             <label className="block text-sm text-white mb-1">Start Date</label>
@@ -149,18 +161,6 @@ export default function EditProject() {
               required
             />
           </div>
-        </div>
-
-        <div>
-          <label className="block text-sm text-white mb-1">Skills</label>
-          <input
-            type="text"
-            name="skills"
-            value={formData.skills}
-            onChange={handleChange}
-            className="w-full border rounded p-2"
-            required
-          />
         </div>
 
         <div>
