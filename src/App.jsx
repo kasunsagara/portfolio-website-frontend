@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import Header from './components/header';
 import Home from './components/home';
 import About from './components/about';
+import Skills from './components/skills';
 import Services from './components/services';
 import Projects from './components/projects';
 import Contact from './components/contact';
@@ -34,6 +35,7 @@ const App = () => {
             <Header />
             <Home />
             <About />
+            <Skills />
             <Services />
             <Projects />
             <Contact />

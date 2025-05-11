@@ -38,7 +38,7 @@ export default function Header() {
 
         {/* Navigation */}
         <ul className="text-[20px] font-medium flex space-x-12 items-center">
-          {['Home', 'About', 'Services', 'Projects', 'Contact'].map((label, index) => (
+          {['Home', 'About', 'Skills', 'Services', 'Projects', 'Contact'].map((label, index) => (
             <li key={index}>
               <a
                 href={`#${label.toLowerCase()}`}
