@@ -2,6 +2,26 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+// Import icon libraries
+import * as FaIcons from "react-icons/fa";
+import * as SiIcons from "react-icons/si";
+import * as DiIcons from "react-icons/di";
+import * as AiIcons from "react-icons/ai";
+import * as BsIcons from "react-icons/bs";
+
+// Helper to get icon component
+const getIconComponent = (iconName) => {
+  const iconLibraries = {
+    ...FaIcons,
+    ...SiIcons,
+    ...DiIcons,
+    ...AiIcons,
+    ...BsIcons,
+  };
+  const Icon = iconLibraries[iconName];
+  return Icon ? <Icon className="text-2xl text-accent" /> : null;
+};
+
 export default function AdminServices() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -65,7 +85,10 @@ export default function AdminServices() {
         <tbody>
           {services.map((service) => (
             <tr key={service._id} className="border-b bg-secondary">
-              <td className="p-2 border">{service.icon}</td>
+              <td className="p-2 border">
+                {/* Render Icon */}
+                {getIconComponent(service.icon)}
+              </td>
               <td className="p-2 border">{service.title}</td>
               <td className="p-2 border">{service.description}</td>
               <td className="p-2 border">
@@ -90,6 +113,4 @@ export default function AdminServices() {
       </table>
     </div>
   );
-};
-
-
+}

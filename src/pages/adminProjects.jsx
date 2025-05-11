@@ -84,24 +84,28 @@ export default function AdminProjects() {
               <td className="p-2 border">{new Date(project.endDate).toLocaleDateString()}</td>
               <td className="p-2 border">{project.skills.join(", ")}</td>
               <td className="p-2 border">
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-300 underline"
-                >
-                  GitHub
-                </a>
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold bg-accent text-black px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
+                  >
+                    GitHub
+                  </a>
+                )}
               </td>
               <td className="p-2 border">
-                <a
-                  href={project.linkedinLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-300 underline"
-                >
-                  LinkedIn
-                </a>
+                {project.linkedinLink && (
+                  <a
+                    href={project.linkedinLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold bg-accent text-black px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
+                  >
+                    LinkedIn
+                  </a>
+                )}
               </td>
               <td className="p-2 border">
                 <div className="flex items-center gap-2">
@@ -126,5 +130,3 @@ export default function AdminProjects() {
     </div>
   );
 };
-
-

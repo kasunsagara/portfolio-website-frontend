@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast"; // ✅ Import toast
 
+import * as FaIcons from "react-icons/fa";
+import * as SiIcons from "react-icons/si";
+import * as DiIcons from "react-icons/di";
+import * as AiIcons from "react-icons/ai";
+import * as BsIcons from "react-icons/bs";
+
 export default function AdminSkills() {
   const [skills, setSkills] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -38,6 +44,18 @@ export default function AdminSkills() {
     navigate(`/admin-panel/skills/edit-skill/${id}`);
   };
 
+  const getIconComponent = (iconName) => {
+    const iconLibraries = {
+      ...FaIcons,
+      ...SiIcons,
+      ...DiIcons,
+      ...AiIcons,
+      ...BsIcons,
+    };
+    const Icon = iconLibraries[iconName];
+    return Icon ? <Icon className="text-2xl text-accent" /> : null;
+  };
+
   if (loading) return <p>Loading...</p>;
 
   return (
@@ -65,7 +83,9 @@ export default function AdminSkills() {
         <tbody>
           {skills.map((skill) => (
             <tr key={skill._id} className="border-b bg-secondary">
-              <td className="p-2 border">{skill.icon}</td>
+              <td className="p-2 border">
+                {getIconComponent(skill.icon)}
+              </td>
               <td className="p-2 border">{skill.name}</td>
               <td className="p-2 border">{skill.desc}</td>
               <td className="p-2 border capitalize">{skill.category}</td>
@@ -92,5 +112,3 @@ export default function AdminSkills() {
     </div>
   );
 };
-
-
