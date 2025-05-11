@@ -89,7 +89,7 @@ export default function AdminProjects() {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold bg-accent text-black px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
+                    className="font-semibold bg-accent text-black px-3 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
                   >
                     GitHub
                   </a>
@@ -101,7 +101,7 @@ export default function AdminProjects() {
                     href={project.linkedinLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold bg-accent text-black px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
+                    className="font-semibold bg-accent text-black px-3 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
                   >
                     LinkedIn
                   </a>
