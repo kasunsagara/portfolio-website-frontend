@@ -4,9 +4,10 @@ import { toast } from 'react-hot-toast';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
 
+  const phoneRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
@@ -27,7 +28,7 @@ export default function Contact() {
 
     try {
       await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contacts`, formData);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', phone: '', email: '', message: '' });
       toast.success('Message sent successfully!');
     } catch (error) {
       toast.error('Failed to send message. Please try again.');
@@ -56,10 +57,21 @@ export default function Contact() {
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              onKeyDown={e => handleKeyDown(e, emailRef)}
+              onKeyDown={e => handleKeyDown(e, phoneRef)}
               required
               className="w-full p-4 text-white bg-primary rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
             />
+            <input
+              ref={phoneRef}
+              name="phone"
+              type="number"
+              placeholder="Your Phone"
+              value={formData.phone}
+              onChange={handleChange}
+              onKeyDown={e => handleKeyDown(e, emailRef)}
+              required
+              className="w-full p-4 text-white bg-primary rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+            />            
             <input
               ref={emailRef}
               name="email"
@@ -97,23 +109,23 @@ export default function Contact() {
 
           {/* Contact Info Boxes */}
           <div className="w-full lg:w-1/4 space-y-6">
-            <div className="bg-secondary p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-secondary p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaEnvelope className="text-[32px] text-accent" />
+                <FaEnvelope className="text-[35px] text-accent" />
               </div>
               <h3 className="font-semibold text-2xl text-accent">Email</h3>
               <p className="text-white mt-2">kasunsagara689@gmail.com</p>
             </div>
-            <div className="bg-secondary p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-secondary p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaPhoneAlt className="text-[32px] text-accent" />
+                <FaPhoneAlt className="text-[35px] text-accent" />
               </div>
               <h3 className="font-semibold text-2xl text-accent">Phone</h3>
               <p className="text-white mt-2">0771670585</p>
             </div>
-            <div className="bg-secondary p-5 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-secondary p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaMapMarkerAlt className="text-[32px] text-accent" />
+                <FaMapMarkerAlt className="text-[35px] text-accent" />
               </div>
               <h3 className="font-semibold text-2xl text-accent">Location</h3>
               <p className="text-white mt-2">Rathnapura, Sri Lanka</p>

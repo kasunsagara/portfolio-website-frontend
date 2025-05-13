@@ -43,6 +43,7 @@ export default function AdminMessages() {
         <thead>
           <tr className="bg-gray-500">
             <th className="p-2 border">Name</th>
+            <th className="p-2 border">Phone</th>
             <th className="p-2 border">Email</th>
             <th className="p-2 border">Message</th>
             <th className="p-2 border">Submitted At</th>
@@ -53,6 +54,7 @@ export default function AdminMessages() {
           {messages.map((msg) => (
             <tr key={msg._id} className="border-b bg-secondary">
               <td className="p-2 border">{msg.name}</td>
+              <td className="p-2 border">{msg.phone}</td>
               <td className="p-2 border">{msg.email}</td>
               <td className="p-2 border">{msg.message}</td>
               <td className="p-2 border">

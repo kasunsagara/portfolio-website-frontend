@@ -112,6 +112,7 @@ export default function AddSkill() {
             <option value="backend">Backend</option>
             <option value="database">Database</option>
             <option value="tools">Tools</option>
+            <option value="other">Other</option>
           </select>
         </div>
 
