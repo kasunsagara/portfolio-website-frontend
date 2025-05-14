@@ -35,7 +35,7 @@ export default function About() {
       ...BsIcons,
     };
     const Icon = iconLibraries[iconName];
-    return Icon ? <Icon className="text-3xl text-accent mb-2" /> : null;
+    return Icon ? <Icon className="text-3xl text-[#00ffff] mb-2" /> : null;
   };
 
   const renderSkillCards = (category) => {
@@ -44,7 +44,7 @@ export default function About() {
       .map((skill, index) => (
         <div
           key={index}
-          className="bg-secondary px-6 py-4 rounded-2xl shadow-md w-64 transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+          className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 px-6 py-4 rounded-2xl shadow-md w-64 transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
         >
           {getIconComponent(skill.icon)}
           <h4 className="text-lg font-bold">{skill.name}</h4>
@@ -57,22 +57,22 @@ export default function About() {
     switch (category) {
       case "frontend":
         return (
-          <span className="flex items-center gap-3 text-accent text-2xl font-semibold mb-4">
-            <FaLaptopCode className="text-accent" />
+          <span className="flex items-center gap-3 text-[#00ffff] text-2xl font-semibold mb-4">
+            <FaLaptopCode className="text-[#00ffff]" />
             Frontend Development
           </span>
         );
       case "backend":
         return (
-          <span className="flex items-center gap-3 text-accent text-2xl font-semibold mb-4">
-            <FaServer className="text-accent" />
+          <span className="flex items-center gap-3 text-[#00ffff] text-2xl font-semibold mb-4">
+            <FaServer className="text-[#00ffff]" />
             Backend Development
           </span>
         );
       case "database":
         return (
-          <span className="flex items-center gap-3 text-accent text-2xl font-semibold mb-4">
-            <FaDatabase className="text-accent" />
+          <span className="flex items-center gap-3 text-[#00ffff] text-2xl font-semibold mb-4">
+            <FaDatabase className="text-[#00ffff]" />
             Databases
           </span>
         );
@@ -85,8 +85,8 @@ export default function About() {
         );
       case "other":
         return (
-          <span className="flex items-center gap-3 text-accent text-2xl font-semibold mb-4">
-            <FaThLarge className="text-accent" />
+          <span className="flex items-center gap-3 text-[#00ffff] text-2xl font-semibold mb-4">
+            <FaThLarge className="text-[#00ffff]" />
             Other 
           </span>
         );
@@ -98,7 +98,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="flex items-center justify-center min-h-screen bg-primary text-white px-4 py-24"
+      className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-4 py-24"
     >
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-0 text-center">
         {/* Left: Image */}
@@ -106,13 +106,13 @@ export default function About() {
           <img
             src="/picture2.jpg"
             alt="Kasun Sagara"
-            className="rounded-2xl shadow-lg w-1/2 h-96 object-cover border-4 border-accent"
+            className="rounded-2xl shadow-lg w-1/2 h-96 object-cover border-4 border-[#00ffff]"
           />
         </div>
 
         {/* Right: Content */}
         <div className="w-full md:w-1/2 text-left">
-          <h2 className="text-5xl font-bold text-left text-accent mb-10">
+          <h2 className="text-5xl font-bold text-left text-[#00ffff] mb-10">
             About Me
           </h2>
 
@@ -122,8 +122,8 @@ export default function About() {
               onClick={() => setActiveTab("education")}
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "education"
-                  ? "bg-accent text-black"
-                  : "bg-gray-700 text-white"
+                  ? "bg-[#00ffff] text-black"
+                  : "bg-gray-600 text-white hover:bg-[#00ffff] hover:text-black transition-transform transform hover:scale-105"
               }`}
             >
               Education
@@ -132,8 +132,8 @@ export default function About() {
               onClick={() => setActiveTab("skills")}
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "skills"
-                  ? "bg-accent text-black"
-                  : "bg-gray-700 text-white"
+                  ? "bg-[#00ffff] text-black"
+                  : "bg-gray-600 text-white hover:bg-[#00ffff] hover:text-black transition-transform transform hover:scale-105"
               }`}
             >
               Skills
@@ -142,8 +142,8 @@ export default function About() {
               onClick={() => setActiveTab("experience")}
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "experience"
-                  ? "bg-accent text-black"
-                  : "bg-gray-700 text-white"
+                  ? "bg-[#00ffff] text-black"
+                  : "bg-gray-600 text-white hover:bg-[#00ffff] hover:text-black transition-transform transform hover:scale-105"
               }`}
             >
               Experience
@@ -154,7 +154,7 @@ export default function About() {
           {activeTab === "education" && (
             <div className="space-y-10 text-left">
               <div>
-                <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
+                <h3 className="text-xl font-semibold text-[#00ffff] flex items-center gap-4 mb-4">
                   <FaUniversity className="text-3xl" />
                   <span>
                     Trincomalee Campus, Eastern University of Sri Lanka
@@ -173,7 +173,7 @@ export default function About() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
+                <h3 className="text-xl font-semibold text-[#00ffff] flex items-center gap-4 mb-4">
                   <FaSchool className="text-3xl" />
                   <span>R/Dharmaloka Maha Vidyalaya, Pelmadulla</span>
                 </h3>
@@ -210,7 +210,7 @@ export default function About() {
           {activeTab === "experience" && (
             <div className="space-y-10 text-left">
               <div>
-                <h3 className="text-xl font-semibold text-accent flex items-center gap-4 mb-4">
+                <h3 className="text-xl font-semibold text-[#00ffff] flex items-center gap-4 mb-4">
                   <FaMedal className="text-3xl" />
                   <span>Lance Corporal</span>
                 </h3>

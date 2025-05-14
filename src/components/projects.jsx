@@ -18,8 +18,8 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="min-h-screen bg-primary px-6 py-24">
-      <h2 className="text-5xl font-bold text-center text-accent mb-10">
+    <section id="projects" className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-6 py-24">
+      <h2 className="text-5xl font-bold text-center text-[#00ffff] mb-10">
         My Projects
       </h2>
 
@@ -44,7 +44,7 @@ export default function Projects() {
 
 function ProjectCard({ name, image, description, startDate, endDate, skills, githubLink, linkedinLink }) {
   return (
-    <div className="w-96 bg-secondary text-white rounded-2xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-300">
+    <div className="w-96 bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 text-white rounded-2xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-300">
       {/* Project Image */}
       <img
         src={image}
@@ -70,7 +70,7 @@ function ProjectCard({ name, image, description, startDate, endDate, skills, git
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold bg-accent text-black px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
+              className="font-semibold bg-[#00ffff] text-black px-4 py-2 rounded-lg hover:bg-gray-600 hover:text-white transition-transform transform hover:scale-105 duration-300"
             >
               GitHub
             </a>
@@ -80,7 +80,7 @@ function ProjectCard({ name, image, description, startDate, endDate, skills, git
               href={linkedinLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold bg-accent text-black px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
+              className="font-semibold bg-[#00ffff] text-black px-4 py-2 rounded-lg hover:bg-gray-600 hover:text-white transition-transform transform hover:scale-105 duration-300"
             >
               LinkedIn
             </a>

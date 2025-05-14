@@ -40,16 +40,16 @@ export default function Contact() {
   return (
     <section 
       id="contact" 
-      className="min-h-screen bg-primary px-4 py-24"
+      className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-4 py-24"
     >
       <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-bold text-accent mb-12">Contact Me</h2>
+        <h2 className="text-5xl font-bold text-[#00ffff] mb-12">Contact Me</h2>
 
         <div className="flex flex-col lg:flex-row justify-center items-start gap-12">
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="w-full lg:w-1/2 bg-secondary p-10 rounded-lg shadow-lg space-y-6"
+            className="w-full lg:w-1/2 bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-10 rounded-lg shadow-lg space-y-6"
           >
             <input
               name="name"
@@ -59,7 +59,7 @@ export default function Contact() {
               onChange={handleChange}
               onKeyDown={e => handleKeyDown(e, phoneRef)}
               required
-              className="w-full p-4 text-white bg-primary rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
             />
             <input
               ref={phoneRef}
@@ -70,7 +70,7 @@ export default function Contact() {
               onChange={handleChange}
               onKeyDown={e => handleKeyDown(e, emailRef)}
               required
-              className="w-full p-4 text-white bg-primary rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
             />            
             <input
               ref={emailRef}
@@ -81,7 +81,7 @@ export default function Contact() {
               onChange={handleChange}
               onKeyDown={e => handleKeyDown(e, messageRef)}
               required
-              className="w-full p-4 text-white bg-primary rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
             />
             <textarea
               ref={messageRef}
@@ -91,7 +91,7 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full p-4 text-white bg-primary rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
             ></textarea>
 
             <button
@@ -99,8 +99,8 @@ export default function Contact() {
               disabled={loading}
               className={`w-full py-3 text-lg font-semibold rounded-lg shadow-md transition duration-300 ${
                 loading
-                  ? 'bg-gray-500 cursor-not-allowed'
-                  : 'bg-accent text-black hover:bg-gray-700 hover:text-white'
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-[#00ffff] text-black hover:bg-gray-600 hover:text-white transition-transform transform hover:scale-105'
               }`}
             >
               Send Message
@@ -109,25 +109,25 @@ export default function Contact() {
 
           {/* Contact Info Boxes */}
           <div className="w-full lg:w-1/4 space-y-6">
-            <div className="bg-secondary p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaEnvelope className="text-[35px] text-accent" />
+                <FaEnvelope className="text-[35px] text-[#00ffff]" />
               </div>
-              <h3 className="font-semibold text-2xl text-accent">Email</h3>
+              <h3 className="font-semibold text-2xl text-[#00ffff]">Email</h3>
               <p className="text-white mt-2">kasunsagara689@gmail.com</p>
             </div>
-            <div className="bg-secondary p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaPhoneAlt className="text-[35px] text-accent" />
+                <FaPhoneAlt className="text-[35px] text-[#00ffff]" />
               </div>
-              <h3 className="font-semibold text-2xl text-accent">Phone</h3>
+              <h3 className="font-semibold text-2xl text-[#00ffff]">Phone</h3>
               <p className="text-white mt-2">0771670585</p>
             </div>
-            <div className="bg-secondary p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaMapMarkerAlt className="text-[35px] text-accent" />
+                <FaMapMarkerAlt className="text-[35px] text-[#00ffff]" />
               </div>
-              <h3 className="font-semibold text-2xl text-accent">Location</h3>
+              <h3 className="font-semibold text-2xl text-[#00ffff]">Location</h3>
               <p className="text-white mt-2">Rathnapura, Sri Lanka</p>
             </div>
           </div>

@@ -2,13 +2,13 @@ import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa"
 
 export default function Footer() {
   return (
-  <footer className="bg-secondary text-white py-10">
+  <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-10">
     <div className="max-w-7xl mx-auto px-6">
       <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-6 md:space-y-0">
         
         {/* Left - Name and Description */}
         <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
-          <h1 className="text-2xl font-semibold text-accent mb-2">Kasun Sagara</h1>
+          <h1 className="text-2xl font-semibold text-[#00ffff] mb-2">Kasun Sagara</h1>
           <p className="max-w-md">
             A Computer Science undergraduate, Full Stack Web Developer and UI/UX Designer 
             with a passion for building modern web applications with the MERN Stack.
@@ -17,7 +17,7 @@ export default function Footer() {
 
         {/* Center - Quick Links */}
         <div className="flex flex-col items-center md:items-start space-y-2">
-          <h1 className="text-2xl font-semibold text-accent mb-2">Quick Links</h1>
+          <h1 className="text-2xl font-semibold text-[#00ffff] mb-2">Quick Links</h1>
           <a href="#home" className="hover:text-gray-500 transition-colors duration-300">
             Home
           </a>          
@@ -37,13 +37,13 @@ export default function Footer() {
 
         {/* Right - Social Icons */}
         <div className="flex flex-col items-center md:items-start">
-          <h1 className="text-2xl font-semibold text-accent mb-4">Connect With Me</h1>
+          <h1 className="text-2xl font-semibold text-[#00ffff] mb-4">Connect With Me</h1>
           <div className="flex space-x-4 text-xl">
             <a
               href="https://github.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-700 text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
             >
               <FaGithub />
             </a> 
@@ -52,7 +52,7 @@ export default function Footer() {
               href="https://linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-700 text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
             >
               <FaLinkedinIn />
             </a>
@@ -61,7 +61,7 @@ export default function Footer() {
               href="https://facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-700 text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
             >
               <FaFacebookF />
             </a>
@@ -70,7 +70,7 @@ export default function Footer() {
               href="https://wa.me/94771670585"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-700 text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
             >
               <FaWhatsapp />
             </a>

@@ -26,24 +26,24 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="flex items-center justify-center min-h-screen bg-primary px-4 mt-16"
+      className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-4 mt-16"
     >
       <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-8 text-center md:text-left -mt-20">
         {/* Text content */}
         <div className="max-w-lg z-16">
-          <h1 className="text-6xl font-bold text-accent mb-4 whitespace-nowrap">
+          <h1 className="text-6xl font-bold text-[#00ffff] mb-4 whitespace-nowrap">
             Hi, I'm Kasun Sagara
           </h1>
 
           <p
-            className={`text-[25px] font-medium text-accent mb-4 transition-opacity duration-500 ${
+            className={`text-[25px] font-medium text-[#00ffff] mb-4 transition-opacity duration-500 ${
               fade ? "opacity-100" : "opacity-0"
             }`}
           >
             {roles[currentRoleIndex]}
           </p>
 
-          <p className="text-accent mb-8">
+          <p className="text-[#00ffff] mb-8">
             Welcome to my portfolio! Explore the other sections to learn more about my projects, skills, and professional journey.
           </p>
 
@@ -52,7 +52,7 @@ export default function Home() {
               href="https://github.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-700 text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
             >
               <FaGithub />
             </a>
@@ -61,7 +61,7 @@ export default function Home() {
               href="https://linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-700 text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
             >
               <FaLinkedinIn />
             </a>
@@ -70,7 +70,7 @@ export default function Home() {
               href="https://facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-700 text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
             >
               <FaFacebookF />
             </a>
@@ -79,7 +79,7 @@ export default function Home() {
               href="https://wa.me/94771670585"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-700 text-accent rounded-full p-2 hover:bg-gray-500 transition-transform transform hover:scale-110"
+              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
             >
               <FaWhatsapp />
             </a>
@@ -89,7 +89,7 @@ export default function Home() {
           <a
             href="/Kasun_Sagara_CV.pdf" // Place the PDF in your public folder
             download
-            className="inline-block py-2 px-6 text-lg font-semibold bg-accent text-black rounded-lg shadow-lg hover:bg-gray-700 hover:text-white transition duration-300 z-10 relative"
+            className="inline-block py-2 px-6 text-lg font-semibold bg-[#00ffff] text-black rounded-lg shadow-lg hover:bg-gray-600 hover:text-white transition-transform transform hover:scale-105 duration-300 z-10 relative"
           >
             Download CV
           </a>
@@ -101,7 +101,7 @@ export default function Home() {
           <div className="absolute inset-0 rounded-full animate-pulse-glow z-0" />
 
           {/* Image inside glow */}
-          <div className="relative w-full h-full rounded-full overflow-hidden z-10 border-4 border-accent animate-pulse-glow">
+          <div className="relative w-full h-full rounded-full overflow-hidden z-10 border-4 border-[#00ffff] animate-pulse-glow">
             <img
               src="/picture1.jpg"
               alt="Kasun Sagara"

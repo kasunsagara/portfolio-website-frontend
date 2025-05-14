@@ -34,16 +34,16 @@ export default function Services() {
       ...BsIcons,
     };
     const Icon = iconLibraries[iconName];
-    return Icon ? <Icon className="text-4xl text-accent mb-4" /> : null;
+    return Icon ? <Icon className="text-4xl text-[#00ffff] mb-4" /> : null;
   };
 
   return (
     <section 
       id="services"
-      className="min-h-screen bg-primary px-6 py-24"
+      className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-6 py-24"
     >
       <div className="max-w-6xl mx-auto px-24">
-        <h2 className="text-5xl font-bold text-center text-accent mb-10">
+        <h2 className="text-5xl font-bold text-center text-[#00ffff] mb-10">
           My Services
         </h2>
         {services.length > 0 && (
@@ -51,7 +51,7 @@ export default function Services() {
             {services.map((service) => (
               <div
                 key={service._id}
-                className="bg-secondary shadow-lg rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 text-white"
+                className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 text-white"
               >
                 {/* Render Icon */}
                 {getIconComponent(service.icon)}
