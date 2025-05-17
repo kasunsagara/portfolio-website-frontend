@@ -100,7 +100,7 @@ export default function Contact() {
               className={`w-full py-3 text-lg font-semibold rounded-lg shadow-md transition duration-300 ${
                 loading
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-[#00ffff] text-black hover:bg-gray-600 hover:text-white transition-transform transform hover:scale-105'
+                  : 'bg-[#00ffff] text-black hover:bg-[#192230] hover:text-white hover:border-2 border-[#00ffff] transition-transform transform'
               }`}
             >
               Send Message

@@ -123,7 +123,7 @@ export default function About() {
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "education"
                   ? "bg-[#00ffff] text-black"
-                  : "bg-gray-600 text-white hover:bg-[#00ffff] hover:text-black transition-transform transform hover:scale-105"
+                  : "bg-[#192230] text-white border-2 border-[#00ffff] hover:bg-[#00ffff] hover:text-black transition-transform transform"
               }`}
             >
               Education
@@ -133,7 +133,7 @@ export default function About() {
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "skills"
                   ? "bg-[#00ffff] text-black"
-                  : "bg-gray-600 text-white hover:bg-[#00ffff] hover:text-black transition-transform transform hover:scale-105"
+                  : "bg-[#192230] text-white border-2 border-[#00ffff] hover:bg-[#00ffff] hover:text-black transition-transform transform"
               }`}
             >
               Skills
@@ -143,7 +143,7 @@ export default function About() {
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "experience"
                   ? "bg-[#00ffff] text-black"
-                  : "bg-gray-600 text-white hover:bg-[#00ffff] hover:text-black transition-transform transform hover:scale-105"
+                  : "bg-[#192230] text-white border-2 border-[#00ffff] hover:bg-[#00ffff] hover:text-black transition-transform transform"
               }`}
             >
               Experience
