@@ -38,7 +38,7 @@ export default function AdminMessages() {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold text-accent mb-4">Manage Messages</h2>
+      <h2 className="text-2xl font-semibold text-[#00ffff] mb-4">Manage Messages</h2>
       <table className="w-full border table-auto text-left text-white">
         <thead>
           <tr className="bg-gray-500">
@@ -52,7 +52,7 @@ export default function AdminMessages() {
         </thead>
         <tbody>
           {messages.map((msg) => (
-            <tr key={msg._id} className="border-b bg-secondary">
+            <tr key={msg._id} className="border-b bg-gray-700 hover:bg-gray-600">
               <td className="p-2 border">{msg.name}</td>
               <td className="p-2 border">{msg.phone}</td>
               <td className="p-2 border">{msg.email}</td>

@@ -59,7 +59,7 @@ export default function Contact() {
               onChange={handleChange}
               onKeyDown={e => handleKeyDown(e, phoneRef)}
               required
-              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-[#00ffff]"
             />
             <input
               ref={phoneRef}
@@ -70,7 +70,7 @@ export default function Contact() {
               onChange={handleChange}
               onKeyDown={e => handleKeyDown(e, emailRef)}
               required
-              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-[#00ffff]"
             />            
             <input
               ref={emailRef}
@@ -81,7 +81,7 @@ export default function Contact() {
               onChange={handleChange}
               onKeyDown={e => handleKeyDown(e, messageRef)}
               required
-              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-[#00ffff]"
             />
             <textarea
               ref={messageRef}
@@ -91,7 +91,7 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full p-4 text-white bg-[#192230] rounded-lg border border-gray-500 focus:outline-none focus:ring-1 focus:ring-[#00ffff]"
             ></textarea>
 
             <button
@@ -100,7 +100,7 @@ export default function Contact() {
               className={`w-full py-3 text-lg font-semibold rounded-lg shadow-md transition duration-300 ${
                 loading
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-[#00ffff] text-black hover:bg-[#192230] hover:text-white hover:border-2 border-[#00ffff] transition-transform transform'
+                  : 'bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform'
               }`}
             >
               Send Message

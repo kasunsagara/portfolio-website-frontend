@@ -63,7 +63,7 @@ export default function AdminServices() {
   return (
     <div className="p-4 relative">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-semibold text-accent">Manage Services</h2>
+        <h2 className="text-2xl font-semibold text-[#00ffff]">Manage Services</h2>
         <button
           onClick={() => navigate("/admin-panel/services/add-service")}
           className="font-semibold text-white bg-green-500 hover:bg-green-700 px-4 py-2 rounded text-sm"
@@ -83,7 +83,7 @@ export default function AdminServices() {
         </thead>
         <tbody>
           {services.map((service) => (
-            <tr key={service._id} className="border-b bg-secondary">
+            <tr key={service._id} className="border-b bg-gray-700 hover:bg-gray-600">
               <td className="p-2 border">
                 {getIconComponent(service.icon)}
               </td>

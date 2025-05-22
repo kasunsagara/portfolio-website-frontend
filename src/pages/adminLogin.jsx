@@ -38,15 +38,15 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-primary px-4">
-      <div className="max-w-md w-full bg-secondary shadow-xl rounded-2xl p-8">
-        <h2 className="text-3xl font-bold text-center text-accent mb-6">Admin Login</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 px-4">
+      <div className="max-w-md w-full bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-xl rounded-2xl p-8">
+        <h2 className="text-3xl font-bold text-center text-[#00ffff] mb-6">Admin Login</h2>
         <form onSubmit={handleLogin} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-white mb-1">Admin Email</label>
             <input
               type="email"
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent"
+              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00ffff]"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onKeyDown={(e) => {
@@ -63,7 +63,7 @@ export default function AdminLogin() {
             <input
               type="password"
               ref={passwordRef}
-              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent mb-4"
+              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00ffff] mb-4"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onKeyDown={(e) => {
@@ -78,7 +78,7 @@ export default function AdminLogin() {
           <button
             type="submit"
             ref={buttonRef}
-            className="w-full text-lg font-semibold bg-accent text-black py-2 rounded-lg hover:bg-gray-700 hover:text-white transition duration-200"
+            className="w-full text-lg font-semibold bg-[#00ffff] text-[#192230] py-2 rounded-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition duration-200"
           >
             Login
           </button>

@@ -70,7 +70,7 @@ function ProjectCard({ name, image, description, startDate, endDate, skills, git
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold bg-[#00ffff] text-black px-4 py-2 rounded-lg hover:bg-[#192230] hover:text-white hover:border-2 border-[#00ffff] transition-transform transform duration-300"
+              className="font-semibold bg-[#00ffff] text-[#192230] px-4 py-2 rounded-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300"
             >
               GitHub
             </a>
@@ -80,7 +80,7 @@ function ProjectCard({ name, image, description, startDate, endDate, skills, git
               href={linkedinLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold bg-[#00ffff] text-black px-4 py-2 rounded-lg hover:bg-[#192230] hover:text-white hover:border-2 border-[#00ffff] transition-transform transform duration-300"
+              className="font-semibold bg-[#00ffff] text-[#192230] px-4 py-2 rounded-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300"
             >
               LinkedIn
             </a>

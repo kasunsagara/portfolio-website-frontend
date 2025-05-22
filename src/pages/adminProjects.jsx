@@ -45,7 +45,7 @@ export default function AdminProjects() {
   return (
     <div className="p-4 relative">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-semibold text-accent">Manage Projects</h2>
+        <h2 className="text-2xl font-semibold text-[#00ffff]">Manage Projects</h2>
         <button
           onClick={() => navigate("/admin-panel/projects/add-project")}
           className="font-semibold text-white bg-green-500 hover:bg-green-700 px-4 py-2 rounded text-sm"
@@ -70,7 +70,7 @@ export default function AdminProjects() {
         </thead>
         <tbody>
           {projects.map((project) => (
-            <tr key={project._id} className="border-b bg-secondary">
+            <tr key={project._id} className="border-b bg-gray-700 hover:bg-gray-600">
               <td className="p-2 border">
                 <img
                   src={project.image}
@@ -89,7 +89,7 @@ export default function AdminProjects() {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold bg-accent text-black px-3 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
+                    className="font-semibold bg-[#00ffff] text-[#192230] px-3 py-2 rounded-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300"
                   >
                     GitHub
                   </a>
@@ -101,7 +101,7 @@ export default function AdminProjects() {
                     href={project.linkedinLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold bg-accent text-black px-3 py-2 rounded-lg hover:bg-gray-700 hover:text-white transition-colors duration-300"
+                    className="font-semibold bg-[#00ffff] text-[#192230] px-3 py-2 rounded-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300"
                   >
                     LinkedIn
                   </a>

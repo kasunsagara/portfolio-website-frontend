@@ -122,8 +122,8 @@ export default function About() {
               onClick={() => setActiveTab("education")}
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "education"
-                  ? "bg-[#00ffff] text-black"
-                  : "bg-[#192230] text-white border-2 border-[#00ffff] hover:bg-[#00ffff] hover:text-black transition-transform transform"
+                  ? "bg-[#192230] text-[#00ffff] border-2 border-[#00ffff]"
+                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff] transition-transform transform"
               }`}
             >
               Education
@@ -132,8 +132,8 @@ export default function About() {
               onClick={() => setActiveTab("skills")}
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "skills"
-                  ? "bg-[#00ffff] text-black"
-                  : "bg-[#192230] text-white border-2 border-[#00ffff] hover:bg-[#00ffff] hover:text-black transition-transform transform"
+                  ? "bg-[#192230] text-[#00ffff] border-2 border-[#00ffff]"
+                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff] transition-transform transform"
               }`}
             >
               Skills
@@ -142,8 +142,8 @@ export default function About() {
               onClick={() => setActiveTab("experience")}
               className={`px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === "experience"
-                  ? "bg-[#00ffff] text-black"
-                  : "bg-[#192230] text-white border-2 border-[#00ffff] hover:bg-[#00ffff] hover:text-black transition-transform transform"
+                  ? "bg-[#192230] text-[#00ffff] border-2 border-[#00ffff]"
+                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff] transition-transform transform"
               }`}
             >
               Experience

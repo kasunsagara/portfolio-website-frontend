@@ -54,8 +54,8 @@ export default function AddService() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-8 m-16 bg-secondary shadow-2xl rounded-2xl">
-      <h2 className="text-2xl text-center text-accent font-bold mb-6">Add Service</h2>
+    <div className="max-w-2xl mx-auto p-8 m-16 bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-2xl rounded-2xl">
+      <h2 className="text-2xl text-center text-[#00ffff] font-bold mb-6">Add Service</h2>
 
       {/* Removed custom message rendering since react-hot-toast is handling it */}
       

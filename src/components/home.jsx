@@ -89,7 +89,7 @@ export default function Home() {
           <a
             href="/Kasun_Sagara_CV.pdf" // Place the PDF in your public folder
             download
-            className="inline-block py-2 px-6 text-lg font-semibold bg-[#00ffff] text-black rounded-lg shadow-lg hover:bg-[#192230] hover:text-white hover:border-2 border-[#00ffff] transition-transform transform duration-300 z-10 relative"
+            className="inline-block py-2 px-6 text-lg font-semibold bg-[#00ffff] text-[#192230] rounded-lg shadow-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300 z-10 relative"
           >
             Download CV
           </a>
