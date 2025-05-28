@@ -49,7 +49,7 @@ export default function Home() {
 
           <div className="flex space-x-4 text-xl mb-6">
             <a
-              href="https://github.com/"
+              href="https://github.com/kasunsagara"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
@@ -58,7 +58,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/kasun-sagara-ba47b22a9/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
@@ -67,7 +67,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://facebook.com/"
+              href="https://www.facebook.com/kasun.sagara.672450?mibextid=ZbWKwL"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
