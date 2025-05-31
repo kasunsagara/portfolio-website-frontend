@@ -8,20 +8,34 @@ export default function Home() {
     "UI/UX Designer",
   ];
 
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
-  const [fade, setFade] = useState(true);
+  const [text, setText] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false); // start fade-out
-      setTimeout(() => {
-        setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
-        setFade(true); // start fade-in
-      }, 500); // match fade-out duration
-    }, 3000);
+    const currentRole = roles[roleIndex];
+    let typingSpeed = isDeleting ? 50 : 100;
 
-    return () => clearInterval(interval);
-  }, []);
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setText(currentRole.substring(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+      } else {
+        setText(currentRole.substring(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        setTimeout(() => setIsDeleting(true), 1500); // pause before deleting
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, roleIndex]);
 
   return (
     <section
@@ -35,12 +49,9 @@ export default function Home() {
             Hi, I'm Kasun Sagara
           </h1>
 
-          <p
-            className={`text-[25px] font-medium text-[#00ffff] mb-4 transition-opacity duration-500 ${
-              fade ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            {roles[currentRoleIndex]}
+          <p className="text-[25px] font-medium text-[#00ffff] mb-4 min-h-[32px]">
+            {text}
+            <span className="animate-blink">|</span>
           </p>
 
           <p className="text-[#00ffff] mb-8">
@@ -56,7 +67,6 @@ export default function Home() {
             >
               <FaGithub />
             </a>
-
             <a
               href="https://www.linkedin.com/in/kasun-sagara-ba47b22a9/"
               target="_blank"
@@ -65,7 +75,6 @@ export default function Home() {
             >
               <FaLinkedinIn />
             </a>
-
             <a
               href="https://www.facebook.com/kasun.sagara.672450?mibextid=ZbWKwL"
               target="_blank"
@@ -74,7 +83,6 @@ export default function Home() {
             >
               <FaFacebookF />
             </a>
-
             <a
               href="https://wa.me/94771670585"
               target="_blank"
@@ -87,7 +95,7 @@ export default function Home() {
 
           {/* Download CV Button */}
           <a
-            href="/Kasun_Sagara_CV.pdf" // Place the PDF in your public folder
+            href="/Kasun_Sagara_CV.pdf"
             download
             className="inline-block py-2 px-6 text-lg font-semibold bg-[#00ffff] text-[#192230] rounded-lg shadow-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300 z-10 relative"
           >
@@ -97,10 +105,7 @@ export default function Home() {
 
         {/* Circular image with spinning border */}
         <div className="relative w-96 h-96">
-          {/* Glowing ring */}
           <div className="absolute inset-0 rounded-full animate-pulse-glow z-0" />
-
-          {/* Image inside glow */}
           <div className="relative w-full h-full rounded-full overflow-hidden z-10 border-4 border-[#00ffff] animate-pulse-glow">
             <img
               src="/picture1.jpg"

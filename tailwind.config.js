@@ -7,9 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        // You can add custom colors here if needed
       },
       animation: {
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite', // glow animation
+        'blink': 'blink 1s step-end infinite',              // blinking cursor animation
       },
       keyframes: {
         pulseGlow: {
@@ -19,6 +21,10 @@ export default {
           '50%': {
             boxShadow: '0 0 40px rgba(0, 255, 255, 0.7)', // glowing effect
           },
+        },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
         },
       },
     },
