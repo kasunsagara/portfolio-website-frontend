@@ -9,7 +9,7 @@ import Projects from './components/projects';
 import Contact from './components/contact';
 import Footer from './components/footer';
 import AdminLogin from './pages/adminLogin';
-import AdminPanel from './pages/adminPanel';
+import AdminPanel from './pages/adminPanel'; 
 import AdminSkills from './pages/adminSkills';
 import AddSkill from './pages/addSkill';
 import EditSkill from './pages/editSkill';
