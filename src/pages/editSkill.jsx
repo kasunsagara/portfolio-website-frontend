@@ -51,7 +51,7 @@ export default function EditSkill() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-8 m-16 bg-secondary shadow-2xl rounded-2xl">
+    <div className="max-w-2xl mx-auto p-8 m-16 bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-2xl rounded-2xl">
       <h2 className="text-2xl text-center text-accent font-bold mb-6">Edit Skill</h2>
 
       {error && <p className="text-red-500 mb-4">{error}</p>} {/* Display error message */}
