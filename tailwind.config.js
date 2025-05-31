@@ -10,7 +10,6 @@ export default {
         // You can add custom colors here if needed
       },
       animation: {
-        'pulse-glow': 'pulseGlow 2s ease-in-out infinite', // glow animation
         'blink': 'blink 1s step-end infinite',              // blinking cursor animation
       },
       keyframes: {
