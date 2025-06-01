@@ -42,7 +42,7 @@ export default function Services() {
       id="services"
       className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-6 py-24"
     >
-      <div className="max-w-6xl mx-auto px-24">
+      <div className="max-w-6xl mx-auto md:px-24">
         <h2 className="text-5xl font-bold text-center text-[#00ffff] mb-10">
           My Services
         </h2>
@@ -65,5 +65,3 @@ export default function Services() {
     </section>
   );
 };
-
-

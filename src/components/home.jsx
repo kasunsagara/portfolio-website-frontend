@@ -27,7 +27,7 @@ export default function Home() {
       }
 
       if (!isDeleting && charIndex === currentRole.length) {
-        setTimeout(() => setIsDeleting(true), 1500); // pause before deleting
+        setTimeout(() => setIsDeleting(true), 1500);
       } else if (isDeleting && charIndex === 0) {
         setIsDeleting(false);
         setRoleIndex((prev) => (prev + 1) % roles.length);
@@ -45,20 +45,20 @@ export default function Home() {
       <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-8 text-center md:text-left -mt-20">
         {/* Text content */}
         <div className="max-w-lg z-16">
-          <h1 className="text-6xl font-bold text-[#00ffff] mb-4 whitespace-nowrap">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#00ffff] mb-4 whitespace-nowrap">
             Hi, I'm Kasun Sagara
           </h1>
 
-          <p className="text-[25px] font-medium text-[#00ffff] mb-4 min-h-[32px]">
+          <p className="text-lg sm:text-xl md:text-2xl font-medium text-[#00ffff] mb-4 min-h-[32px]">
             {text}
             <span className="animate-blink">|</span>
           </p>
 
-          <p className="text-[#00ffff] mb-8">
+          <p className="text-sm sm:text-base md:text-lg text-[#00ffff] mb-8">
             Welcome to my portfolio! Explore the other sections to learn more about my projects, skills, and professional journey.
           </p>
 
-          <div className="flex space-x-4 text-xl mb-6">
+          <div className="flex justify-center md:justify-start space-x-4 text-lg sm:text-xl mb-6">
             <a
               href="https://github.com/kasunsagara"
               target="_blank"
@@ -97,14 +97,14 @@ export default function Home() {
           <a
             href="/Kasun_Sagara_CV.pdf"
             download
-            className="inline-block py-2 px-6 text-lg font-semibold bg-[#00ffff] text-[#192230] rounded-lg shadow-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300 z-10 relative"
+            className="inline-block py-2 px-6 text-base sm:text-lg font-semibold bg-[#00ffff] text-[#192230] rounded-lg shadow-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300 z-10 relative"
           >
             Download CV
           </a>
         </div>
 
         {/* Circular image with spinning border */}
-        <div className="relative w-96 h-96">
+        <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96">
           <div className="absolute inset-0 rounded-full animate-pulse-glow z-0" />
           <div className="relative w-full h-full rounded-full overflow-hidden z-10 border-4 border-[#00ffff] animate-pulse-glow">
             <img

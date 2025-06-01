@@ -42,14 +42,14 @@ export default function Contact() {
       id="contact" 
       className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-4 py-24"
     >
-      <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-bold text-[#00ffff] mb-12">Contact Me</h2>
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl sm:text-5xl font-bold text-[#00ffff] mb-12">Contact Me</h2>
 
-        <div className="flex flex-col lg:flex-row justify-center items-start gap-12">
+        <div className="flex flex-col lg:flex-row justify-center items-stretch gap-12">
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="w-full lg:w-1/2 bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-10 rounded-lg shadow-lg space-y-6"
+            className="w-full lg:w-2/3 bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-6 sm:p-10 rounded-lg shadow-lg space-y-6"
           >
             <input
               name="name"
@@ -108,27 +108,27 @@ export default function Contact() {
           </form>
 
           {/* Contact Info Boxes */}
-          <div className="w-full lg:w-1/4 space-y-6">
-            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+          <div className="w-full lg:w-1/3 space-y-6">
+            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-6 sm:p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaEnvelope className="text-[35px] text-[#00ffff]" />
+                <FaEnvelope className="text-[30px] sm:text-[35px] text-[#00ffff]" />
               </div>
-              <h3 className="font-semibold text-2xl text-[#00ffff]">Email</h3>
-              <p className="text-white mt-2">kasunsagara689@gmail.com</p>
+              <h3 className="font-semibold text-xl sm:text-2xl text-[#00ffff]">Email</h3>
+              <p className="text-white mt-2 text-sm sm:text-base">kasunsagara689@gmail.com</p>
             </div>
-            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-6 sm:p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaPhoneAlt className="text-[35px] text-[#00ffff]" />
+                <FaPhoneAlt className="text-[30px] sm:text-[35px] text-[#00ffff]" />
               </div>
-              <h3 className="font-semibold text-2xl text-[#00ffff]">Phone</h3>
-              <p className="text-white mt-2">0771670585</p>
+              <h3 className="font-semibold text-xl sm:text-2xl text-[#00ffff]">Phone</h3>
+              <p className="text-white mt-2 text-sm sm:text-base">0771670585</p>
             </div>
-            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
+            <div className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 p-6 sm:p-8 rounded-lg shadow-lg text-center hover:scale-105 transition duration-300">
               <div className="flex justify-center mb-4">
-                <FaMapMarkerAlt className="text-[35px] text-[#00ffff]" />
+                <FaMapMarkerAlt className="text-[30px] sm:text-[35px] text-[#00ffff]" />
               </div>
-              <h3 className="font-semibold text-2xl text-[#00ffff]">Location</h3>
-              <p className="text-white mt-2">Rathnapura, Sri Lanka</p>
+              <h3 className="font-semibold text-xl sm:text-2xl text-[#00ffff]">Location</h3>
+              <p className="text-white mt-2 text-sm sm:text-base">Rathnapura, Sri Lanka</p>
             </div>
           </div>
         </div>

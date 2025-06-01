@@ -100,50 +100,50 @@ export default function About() {
       id="about"
       className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-4 py-24"
     >
-      <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-0 text-center">
+      <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-8 text-center md:text-left">
         {/* Left: Image */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
           <img
             src="/picture2.jpg"
             alt="Kasun Sagara"
-            className="rounded-2xl shadow-lg w-1/2 h-96 object-cover border-4 border-[#00ffff]"
+            className="rounded-2xl shadow-lg w-3/4 sm:w-1/2 h-72 sm:h-96 object-cover border-4 border-[#00ffff]"
           />
         </div>
 
         {/* Right: Content */}
-        <div className="w-full md:w-1/2 text-left">
-          <h2 className="text-5xl font-bold text-left text-[#00ffff] mb-10">
+        <div className="w-full md:w-1/2">
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#00ffff] mb-10">
             About Me
           </h2>
 
           {/* Toggle Buttons */}
-          <div className="flex justify-center md:justify-start gap-4 mb-6">
+          <div className="flex justify-center md:justify-start gap-3 flex-wrap mb-6">
             <button
               onClick={() => setActiveTab("education")}
-              className={`px-4 py-2 rounded-lg font-semibold transition ${
+              className={`px-4 py-2 rounded-lg font-semibold transition w-full sm:w-auto ${
                 activeTab === "education"
                   ? "bg-[#192230] text-[#00ffff] border-2 border-[#00ffff]"
-                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff] transition-transform transform"
+                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff]"
               }`}
             >
               Education
             </button>
             <button
               onClick={() => setActiveTab("skills")}
-              className={`px-4 py-2 rounded-lg font-semibold transition ${
+              className={`px-4 py-2 rounded-lg font-semibold transition w-full sm:w-auto ${
                 activeTab === "skills"
                   ? "bg-[#192230] text-[#00ffff] border-2 border-[#00ffff]"
-                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff] transition-transform transform"
+                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff]"
               }`}
             >
               Skills
             </button>
             <button
               onClick={() => setActiveTab("experience")}
-              className={`px-4 py-2 rounded-lg font-semibold transition ${
+              className={`px-4 py-2 rounded-lg font-semibold transition w-full sm:w-auto ${
                 activeTab === "experience"
                   ? "bg-[#192230] text-[#00ffff] border-2 border-[#00ffff]"
-                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff] transition-transform transform"
+                  : "bg-[#00ffff] text-[#192230] hover:bg-[#192230] hover:text-[#00ffff] border-2 border-[#00ffff]"
               }`}
             >
               Experience
