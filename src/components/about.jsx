@@ -78,8 +78,8 @@ export default function About() {
         );
       case "tools":
         return (
-          <span className="flex items-center gap-3 text-accent text-2xl font-semibold mb-4">
-            <FaTools className="text-accent" />
+          <span className="flex items-center gap-3 text-[#00ffff] text-2xl font-semibold mb-4">
+            <FaTools className="text-[#00ffff]" />
             Tools 
           </span>
         );
