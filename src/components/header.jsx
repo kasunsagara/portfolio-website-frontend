@@ -46,7 +46,7 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <ul className={`absolute md:static top-20 left-0 w-full md:w-auto bg-gradient-to-b from-gray-900 to-gray-800 md:bg-transparent flex-col md:flex-row text-[18px] md:text-[20px] font-medium flex md:flex space-y-4 md:space-y-0 md:space-x-12 items-center px-6 md:px-0 transition-all duration-300 ${isMenuOpen ? 'flex' : 'hidden md:flex'}`}>
+        <ul className={`absolute md:static top-20 left-0 w-full md:w-auto bg-gradient-to-b from-gray-900 to-gray-800 md:bg-none flex-col md:flex-row text-[18px] md:text-[20px] font-medium flex md:flex space-y-4 md:space-y-0 md:space-x-12 items-center px-6 md:px-0 transition-all duration-300 ${isMenuOpen ? 'flex' : 'hidden md:flex'}`}>
           {['Home', 'About', 'Services', 'Projects', 'Contact'].map((label, index) => (
             <li key={index}>
               <a
