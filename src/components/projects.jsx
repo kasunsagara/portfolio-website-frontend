@@ -22,7 +22,7 @@ export default function Projects() {
       id="projects" 
       className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-6 py-24"
     >
-      <h2 className="text-3xl sm:text-5xl font-bold text-center text-[#00ffff] mb-8 sm:mb-10">
+      <h2 className="text-5xl sm:text-5xl font-bold text-center text-[#00ffff] mb-8 sm:mb-10">
         My Projects
       </h2>
 

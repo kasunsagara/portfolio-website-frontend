@@ -43,7 +43,7 @@ export default function Contact() {
       className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-4 py-24"
     >
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-[#00ffff] mb-12">Contact Me</h2>
+        <h2 className="text-5xl sm:text-5xl font-bold text-[#00ffff] mb-12">Contact Me</h2>
 
         <div className="flex flex-col lg:flex-row justify-center items-stretch gap-12">
           {/* Contact Form */}

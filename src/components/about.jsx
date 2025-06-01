@@ -112,7 +112,7 @@ export default function About() {
 
         {/* Right: Content */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#00ffff] mb-10">
+          <h2 className="text-5xl sm:text-5xl font-bold text-[#00ffff] mb-10">
             About Me
           </h2>
 
