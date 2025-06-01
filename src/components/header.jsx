@@ -41,7 +41,7 @@ export default function Header() {
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={28} className="text-[#00ffff]" /> : <Menu size={28} className="text-[#00ffff]" />}
           </button>
         </div>
 

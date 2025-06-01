@@ -55,7 +55,7 @@ export default function Home() {
           </p>
 
           <p className="text-sm sm:text-base md:text-lg text-[#00ffff] mb-8">
-            Welcome to my portfolio! Explore the other sections to learn more about my projects, skills, and professional journey.
+            Welcome to my portfolio! Explore the other sections to learn more about my skills, services, projects.
           </p>
 
           <div className="flex justify-center md:justify-start space-x-4 text-lg sm:text-xl mb-6">
