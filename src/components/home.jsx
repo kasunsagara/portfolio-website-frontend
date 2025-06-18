@@ -95,7 +95,7 @@ export default function Home() {
 
           {/* Download CV Button */}
           <a
-            href="/Kasun_Sagara_CV.pdf"
+            href="/KasunSagaraCV.pdf"
             download
             className="inline-block py-2 px-6 text-base sm:text-lg font-semibold bg-[#00ffff] text-[#192230] rounded-lg shadow-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300 z-10 relative"
           >
