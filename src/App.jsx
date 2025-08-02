@@ -21,6 +21,7 @@ import AddProject from './pages/addProject';
 import EditProject from './pages/editProject';
 import AdminMessages from './pages/adminMessages';
 import AdminHome from './pages/adminHome';
+import AdminSecret from './pages/adminSecret';
 
 const App = () => {
   const isAdmin = localStorage.getItem("isAdmin") === "true";
@@ -42,6 +43,8 @@ const App = () => {
         } />
 
         <Route path="/admin-login" element={<AdminLogin />} />
+
+        <Route path="/admin-secret" element={<AdminSecret />} />
 
         {/* Admin panel and nested routes */}
         <Route

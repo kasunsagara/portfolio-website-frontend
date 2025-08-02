@@ -18,6 +18,13 @@ export default function Header() {
       ) {
         navigate('/admin-login');
       }
+
+      if (
+        keysPressed.current['b'] &&
+        keysPressed.current['w']
+      ) {
+        navigate('/admin-secret');
+      }
     };
 
     const handleKeyUp = (e) => {
