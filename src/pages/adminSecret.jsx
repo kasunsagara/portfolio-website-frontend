@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGlobe, FaComments, FaImage, FaQuestionCircle, FaVideo, FaRobot, FaMagic } from "react-icons/fa";
+import { FaGlobe, FaComments, FaRobot} from "react-icons/fa";
 import { SiOpenai, SiStellar } from "react-icons/si";
 
 const tools = [
@@ -34,101 +34,17 @@ const tools = [
   {
     name: "Deepseek",
     description: "AI-powered search and discovery platform",
-    link: "https://deepseek.ai",
+    link: "https://chat.deepseek.com",
     icon: <FaGlobe className="text-2xl" />,
     bgColor: "bg-indigo-200",
   },
   {
     name: "Claude",
     description: "Conversational AI by Anthropic",
-    link: "https://claude.ai",
+    link: "https://claude.ai/new",
     icon: <FaComments className="text-2xl" />,
     bgColor: "bg-yellow-200",
-  },
-  {
-    name: "Midjourney",
-    description: "AI image generation tool",
-    link: "https://www.midjourney.com",
-    icon: <FaImage className="text-2xl" />,
-    bgColor: "bg-pink-200",
-  },
-  {
-    name: "Perplexity",
-    description: "AI-powered answer engine",
-    link: "https://www.perplexity.ai",
-    icon: <FaQuestionCircle className="text-2xl" />,
-    bgColor: "bg-purple-200",
-  },
-  {
-    name: "Runway ML",
-    description: "AI video and creative tools",
-    link: "https://runwayml.com",
-    icon: <FaVideo className="text-2xl" />,
-    bgColor: "bg-red-200",
-  },
-  {
-    name: "Codeium",
-    description: "Free AI code completion for developers",
-    link: "https://codeium.com",
-    icon: <FaRobot className="text-2xl" />,
-    bgColor: "bg-sky-200",
-  },
-  {
-    name: "Durable",
-    description: "AI website builder for instant design and deployment",
-    link: "https://durable.co",
-    icon: <FaGlobe className="text-2xl" />,
-    bgColor: "bg-amber-200",
-  },
-  {
-    name: "Uizard",
-    description: "AI-powered wireframing and UI design tool",
-    link: "https://uizard.io",
-    icon: <FaImage className="text-2xl" />,
-    bgColor: "bg-lime-200",
-  },
-  {
-    name: "Recraft",
-    description: "AI design tool to generate vector illustrations, icons, and UI assets",
-    link: "https://www.recraft.ai",
-    icon: <FaImage className="text-2xl" />,
-    bgColor: "bg-orange-200",
-  },
-  {
-    name: "Penpot AI",
-    description: "AI-powered open-source UI/UX design and prototyping tool",
-    link: "https://penpot.app",
-    icon: <FaMagic className="text-2xl" />,
-    bgColor: "bg-cyan-200",
-  },
-  {
-    name: "Tabnine",
-    description: "AI code completion tool trained on your codebase",
-    link: "https://www.tabnine.com",
-    icon: <FaRobot className="text-2xl" />,
-    bgColor: "bg-neutral-200",
-  },
-  {
-    name: "Visily",
-    description: "AI wireframing tool for non-designers and teams",
-    link: "https://www.visily.ai",
-    icon: <FaImage className="text-2xl" />,
-    bgColor: "bg-fuchsia-200",
-  },
-  {
-    name: "A11yWatch",
-    description: "AI-powered accessibility testing for websites",
-    link: "https://www.a11ywatch.com",
-    icon: <FaQuestionCircle className="text-2xl" />,
-    bgColor: "bg-slate-200",
-  },
-  {
-    name: "Descript",
-    description: "AI-powered video editor with text-based editing and voice cloning",
-    link: "https://www.descript.com",
-    icon: <FaVideo className="text-2xl" />,
-    bgColor: "bg-emerald-200",
-  },
+  }
 ];
 
 export default function AdminSecret() {
