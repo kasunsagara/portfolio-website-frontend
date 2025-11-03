@@ -6,6 +6,7 @@ export default function Home() {
     "Computer Science Undergraduate",
     "Full Stack Web Developer",
     "UI/UX Designer",
+    "Cisco Networking Enthusiast",
   ];
 
   const [text, setText] = useState("");
