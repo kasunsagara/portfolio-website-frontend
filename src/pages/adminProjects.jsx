@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPlus, FaEdit, FaTrash, FaSearch, FaFolderOpen, FaGithub, FaLinkedin, FaCalendar, FaCode, FaSort, FaSortUp, FaSortDown, FaExternalLinkAlt } from "react-icons/fa";
+import { FaPlus, FaEdit, FaTrash, FaFolderOpen, FaGithub, FaLinkedin, FaCalendar, FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
 
 export default function AdminProjects() {
   const [projects, setProjects] = useState([]);
@@ -31,10 +31,6 @@ export default function AdminProjects() {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this project?")) {
-      return;
-    }
-
     try {
       await axios.delete(
         `${import.meta.env.VITE_BACKEND_URL}/api/projects/${id}`
@@ -155,25 +151,6 @@ export default function AdminProjects() {
           <FaPlus className="text-lg" />
           <span>Add New Project</span>
         </motion.button>
-      </motion.div>
-
-      {/* Search Bar */}
-      <motion.div
-        variants={itemVariants}
-        className="p-6 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl"
-      >
-        <div className="relative max-w-md">
-          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-            <FaSearch className="text-lg" />
-          </div>
-          <input
-            type="text"
-            placeholder="Search projects by name, description, or skills..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-gray-700/50 border border-gray-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-gray-700/70 transition-all duration-300"
-          />
-        </div>
       </motion.div>
 
       {/* Projects Table */}
@@ -382,21 +359,6 @@ export default function AdminProjects() {
             )}
           </motion.div>
         )}
-      </motion.div>
-
-      {/* Table Footer Stats */}
-      <motion.div
-        variants={itemVariants}
-        className="flex items-center justify-between p-4 bg-gray-800/30 rounded-xl border border-gray-700"
-      >
-        <div className="text-sm text-gray-400">
-          Showing <span className="text-cyan-400 font-semibold">{sortedProjects.length}</span> of{" "}
-          <span className="text-white font-semibold">{projects.length}</span> projects
-        </div>
-        
-        <div className="text-sm text-gray-400">
-          Total Projects: <span className="text-white font-semibold">{projects.length}</span>
-        </div>
       </motion.div>
     </motion.div>
   );

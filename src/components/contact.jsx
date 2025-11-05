@@ -361,34 +361,6 @@ export default function Contact() {
                 </motion.a>
               ))}
             </motion.div>
-
-            {/* Additional Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="bg-gray-800/50 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-6"
-            >
-              <h4 className="text-lg font-semibold text-cyan-400 mb-3">Why Work With Me?</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-center space-x-2">
-                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                  <span>Fast response time (within 24 hours)</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                  <span>Quality-focused development approach</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                  <span>Modern technology stack</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                  <span>Ongoing support and maintenance</span>
-                </li>
-              </ul>
-            </motion.div>
           </motion.div>
         </div>
       </div>

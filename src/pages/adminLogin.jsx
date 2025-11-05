@@ -278,19 +278,6 @@ export default function AdminLogin() {
             </motion.button>
           </motion.form>
 
-          {/* Security Notice */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="mt-6 p-4 bg-gray-700/30 rounded-xl border border-gray-600"
-          >
-            <div className="flex items-center space-x-2 text-sm text-gray-400">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span>Secure encrypted connection</span>
-            </div>
-          </motion.div>
-
           {/* Decorative Elements */}
           <motion.div
             initial={{ scale: 0 }}

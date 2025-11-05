@@ -4,18 +4,7 @@ import axios from 'axios';
 import uploadMediaToSupabase from '../utils/mediaUpload';
 import { toast } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FaPlus, 
-  FaImage, 
-  FaCode, 
-  FaCalendar, 
-  FaGithub, 
-  FaLinkedin, 
-  FaTag,
-  FaArrowLeft,
-  FaUpload,
-  FaFileImage
-} from 'react-icons/fa';
+import { FaPlus, FaImage, FaCode, FaCalendar, FaGithub, FaLinkedin, FaTag, FaArrowLeft, FaUpload, FaFileImage } from 'react-icons/fa';
 
 export default function AddProject() {
   const navigate = useNavigate();

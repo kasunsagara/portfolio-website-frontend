@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPlus, FaEdit, FaTrash, FaTools, FaSearch, FaCode, FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
+import { FaPlus, FaEdit, FaTrash, FaTools, FaCode, FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
 
 import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
@@ -38,10 +38,6 @@ export default function AdminSkills() {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this skill?")) {
-      return;
-    }
-
     try {
       await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/skills/${id}`);
       setSkills(skills.filter((skill) => skill._id !== id));
@@ -78,8 +74,6 @@ export default function AdminSkills() {
     };
     return colors[category] || "bg-gray-500/20 text-gray-400 border-gray-400/30";
   };
-
-  const categories = ["all", "frontend", "backend", "database", "tools", "other"];
   
   const filteredSkills = skills.filter(skill => {
     const matchesSearch = skill.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -174,45 +168,6 @@ export default function AdminSkills() {
           <FaPlus className="text-lg" />
           <span>Add New Skill</span>
         </motion.button>
-      </motion.div>
-
-      {/* Filters */}
-      <motion.div
-        variants={itemVariants}
-        className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between p-6 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl"
-      >
-        <div className="flex-1 w-full">
-          <div className="relative">
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-              <FaSearch className="text-lg" />
-            </div>
-            <input
-              type="text"
-              placeholder="Search skills..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-gray-700/50 border border-gray-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-gray-700/70 transition-all duration-300"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {categories.map(category => (
-            <motion.button
-              key={category}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-xl transition-all duration-300 border capitalize ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-2xl shadow-cyan-500/25 border-cyan-400/50"
-                  : "bg-gray-700/50 text-gray-400 hover:text-white hover:bg-gray-600/50 border-gray-600"
-              }`}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </div>
       </motion.div>
 
       {/* Skills Table */}
@@ -362,28 +317,6 @@ export default function AdminSkills() {
             )}
           </motion.div>
         )}
-      </motion.div>
-
-      {/* Table Footer Stats */}
-      <motion.div
-        variants={itemVariants}
-        className="flex items-center justify-between p-4 bg-gray-800/30 rounded-xl border border-gray-700"
-      >
-        <div className="text-sm text-gray-400">
-          Showing <span className="text-cyan-400 font-semibold">{sortedSkills.length}</span> of{" "}
-          <span className="text-white font-semibold">{skills.length}</span> skills
-        </div>
-        
-        <div className="flex items-center space-x-4 text-sm text-gray-400">
-          {categories.filter(cat => cat !== "all").map(category => (
-            <div key={category} className="flex items-center space-x-1">
-              <span className="capitalize">{category}:</span>
-              <span className="text-white font-semibold">
-                {skills.filter(s => s.category === category).length}
-              </span>
-            </div>
-          ))}
-        </div>
       </motion.div>
     </motion.div>
   );

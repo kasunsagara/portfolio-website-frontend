@@ -1,18 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { 
-  FaUniversity, 
-  FaSchool, 
-  FaLaptopCode, 
-  FaServer, 
-  FaDatabase, 
-  FaTools, 
-  FaMedal, 
-  FaThLarge,
-  FaGraduationCap,
-  FaCode,
-  FaBriefcase
-} from "react-icons/fa";
+import { FaUniversity, FaSchool, FaLaptopCode, FaServer, FaDatabase, FaTools, FaMedal, FaThLarge, FaGraduationCap, FaCode,
+FaBriefcase } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 import * as FaIcons from "react-icons/fa";
@@ -35,13 +24,6 @@ export default function About() {
         setSkills(res.data);
       } catch (err) {
         console.error("Failed to fetch skills:", err);
-        // Fallback skills data
-        setSkills([
-          { name: "React", category: "frontend", icon: "SiReact", desc: "Modern UI development" },
-          { name: "Node.js", category: "backend", icon: "SiNodedotjs", desc: "Server-side JavaScript" },
-          { name: "MongoDB", category: "database", icon: "SiMongodb", desc: "NoSQL database" },
-          { name: "Git", category: "tools", icon: "FaGit", desc: "Version control" }
-        ]);
       } finally {
         setIsLoading(false);
       }

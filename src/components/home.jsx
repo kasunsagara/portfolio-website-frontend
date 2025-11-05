@@ -50,17 +50,17 @@ export default function Home() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
       
       {/* Floating Tech Icons */}
-      <div className="absolute top-1/4 left-1/4 animate-float">
-        <SiJavascript className="text-yellow-400 text-4xl opacity-20" />
+      <div className="absolute top-3/5 left-1/2 animate-float">
+        <SiJavascript className="text-yellow-400 text-4xl opacity-10" />
       </div>
-      <div className="absolute top-1/3 right-1/4 animate-float" style={{ animationDelay: '2s' }}>
-        <SiReact className="text-cyan-400 text-4xl opacity-20" />
+      <div className="absolute top-1/4 right-3/5 animate-float" style={{ animationDelay: '2s' }}>
+        <SiReact className="text-cyan-400 text-4xl opacity-10" />
       </div>
       <div className="absolute bottom-1/4 left-1/3 animate-float" style={{ animationDelay: '4s' }}>
         <SiCisco className="text-blue-500 text-4xl opacity-20" />
       </div>
-      <div className="absolute bottom-1/3 right-1/3 animate-float" style={{ animationDelay: '6s' }}>
-        <FaCode className="text-green-400 text-4xl opacity-20" />
+      <div className="absolute bottom-1/4 right-1/2 animate-float" style={{ animationDelay: '6s' }}>
+        <FaCode className="text-green-400 text-4xl opacity-10" />
       </div>
 
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16 relative z-10">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCode } from "react-icons/fa";
@@ -22,51 +22,6 @@ export default function Services() {
         setServices(response.data);
       } catch (error) {
         console.error("Error fetching services:", error);
-        // Fallback services data
-        setServices([
-          {
-            _id: "1",
-            title: "Web Development",
-            description: "Custom web applications built with modern technologies like React, Node.js, and MongoDB",
-            icon: "FaCode",
-            features: ["Responsive Design", "Fast Performance", "SEO Friendly"]
-          },
-          {
-            _id: "2", 
-            title: "UI/UX Design",
-            description: "Beautiful and intuitive user interfaces that provide exceptional user experiences",
-            icon: "FaPalette",
-            features: ["User Research", "Wireframing", "Prototyping"]
-          },
-          {
-            _id: "3",
-            title: "Mobile Development", 
-            description: "Cross-platform mobile applications that work seamlessly on iOS and Android",
-            icon: "FaMobile",
-            features: ["React Native", "Native Performance", "App Store Deployment"]
-          },
-          {
-            _id: "4",
-            title: "Backend Development",
-            description: "Robust server-side solutions with secure APIs and database management",
-            icon: "FaServer", 
-            features: ["REST APIs", "Database Design", "Cloud Deployment"]
-          },
-          {
-            _id: "5",
-            title: "DevOps & Deployment",
-            description: "Complete deployment solutions with CI/CD pipelines and cloud infrastructure",
-            icon: "FaRocket",
-            features: ["CI/CD Pipelines", "Docker", "Cloud Services"]
-          },
-          {
-            _id: "6",
-            title: "Technical Consulting",
-            description: "Expert advice on technology stack, architecture, and best practices",
-            icon: "FaCog",
-            features: ["Architecture Review", "Code Audit", "Best Practices"]
-          }
-        ]);
       } finally {
         setIsLoading(false);
       }

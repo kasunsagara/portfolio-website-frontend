@@ -1,21 +1,12 @@
-import React, { useState } from 'react';
 import { useNavigate, Link, Outlet, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FaTools, 
-  FaHandshake, 
-  FaFolderOpen, 
-  FaEnvelope, 
-  FaSignOutAlt, 
-  FaUserShield,
-  FaBars
-} from 'react-icons/fa';
+import { FaTools, FaHandshake, FaFolderOpen, FaEnvelope, FaSignOutAlt, 
+  FaUserShield } from 'react-icons/fa';
 import { toast } from "react-hot-toast";
 
 export default function AdminPanel() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const handleLogout = () => {
     localStorage.removeItem("isAdmin");
@@ -101,7 +92,6 @@ export default function AdminPanel() {
       <motion.div
         variants={sidebarVariants}
         initial="open"
-        animate={isSidebarOpen ? "open" : "closed"}
         className="fixed left-0 top-0 h-full bg-gray-800/80 backdrop-blur-xl border-r border-gray-700 z-50 overflow-hidden"
       >
         <div className="flex flex-col h-full">
@@ -121,7 +111,6 @@ export default function AdminPanel() {
                   <FaUserShield className="text-white text-lg" />
                 </div>
                 <AnimatePresence>
-                  {isSidebarOpen && (
                     <motion.div
                       initial={{ opacity: 0, width: 0 }}
                       animate={{ opacity: 1, width: "auto" }}
@@ -135,18 +124,8 @@ export default function AdminPanel() {
                         <p className="text-xs text-gray-400">Control Center</p>
                       </div>
                     </motion.div>
-                  )}
                 </AnimatePresence>
               </motion.div>
-
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="p-2 rounded-lg bg-gray-700/50 hover:bg-gray-600/50 border border-gray-600 text-gray-400 hover:text-white transition-all duration-300"
-              >
-                <FaBars className="text-sm" />
-              </motion.button>
             </div>
           </motion.div>
 
@@ -185,7 +164,6 @@ export default function AdminPanel() {
                     </div>
                     
                     <AnimatePresence>
-                      {isSidebarOpen && (
                         <motion.div
                           initial={{ opacity: 0, width: 0 }}
                           animate={{ opacity: 1, width: "auto" }}
@@ -201,7 +179,6 @@ export default function AdminPanel() {
                             </span>
                           </div>
                         </motion.div>
-                      )}
                     </AnimatePresence>
 
                     {isActive && (
@@ -233,7 +210,6 @@ export default function AdminPanel() {
               </div>
               
               <AnimatePresence>
-                {isSidebarOpen && (
                   <motion.div
                     initial={{ opacity: 0, width: 0 }}
                     animate={{ opacity: 1, width: "auto" }}
@@ -242,7 +218,6 @@ export default function AdminPanel() {
                   >
                     <span className="font-medium text-sm whitespace-nowrap">Logout</span>
                   </motion.div>
-                )}
               </AnimatePresence>
             </motion.button>
           </motion.div>
@@ -267,7 +242,6 @@ export default function AdminPanel() {
       <motion.div
         variants={contentVariants}
         initial="open"
-        animate={isSidebarOpen ? "open" : "closed"}
         className="flex-1 min-h-screen bg-gradient-to-br from-gray-900 to-black"
       >
         {/* Background Elements */}
@@ -278,33 +252,6 @@ export default function AdminPanel() {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
         <div className="relative z-10 p-8">
-          {/* Content Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-3xl font-bold text-white mb-2">
-                  Welcome to Admin Panel
-                </h1>
-                <p className="text-gray-400">
-                  Manage your portfolio content and monitor activities
-                </p>
-              </div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center space-x-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl px-4 py-2"
-              >
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-sm text-gray-300">Admin Online</span>
-              </motion.div>
-            </div>
-          </motion.div>
-
           {/* Nested Routes Content */}
           <motion.div
             key={location.pathname}
