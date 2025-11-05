@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaGithub, FaWhatsapp, FaDownload, FaCode } from "react-icons/fa";
+import { SiCisco, SiJavascript, SiReact } from "react-icons/si";
 
 export default function Home() {
   const roles = [
@@ -39,81 +40,136 @@ export default function Home() {
   }, [charIndex, isDeleting, roleIndex]);
 
   return (
-    <section
-      id="home"
-      className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-4 mt-16"
-    >
-      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-8 text-center md:text-left -mt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 to-black text-white pt-20">
+      {/* Animated Background Elements */}
+      <div 
+        className="absolute inset-0 opacity-30 transition-all duration-1000"
+      ></div>
+      
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
+      
+      {/* Floating Tech Icons */}
+      <div className="absolute top-1/4 left-1/4 animate-float">
+        <SiJavascript className="text-yellow-400 text-4xl opacity-20" />
+      </div>
+      <div className="absolute top-1/3 right-1/4 animate-float" style={{ animationDelay: '2s' }}>
+        <SiReact className="text-cyan-400 text-4xl opacity-20" />
+      </div>
+      <div className="absolute bottom-1/4 left-1/3 animate-float" style={{ animationDelay: '4s' }}>
+        <SiCisco className="text-blue-500 text-4xl opacity-20" />
+      </div>
+      <div className="absolute bottom-1/3 right-1/3 animate-float" style={{ animationDelay: '6s' }}>
+        <FaCode className="text-green-400 text-4xl opacity-20" />
+      </div>
+
+      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16 relative z-10">
         {/* Text content */}
-        <div className="max-w-lg z-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#00ffff] mb-4 whitespace-nowrap">
-            Hi, I'm Kasun Sagara
+        <div className="md:w-1/2 text-center md:text-left">
+          {/* Welcome Badge */}
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Hi, I'm <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">Kasun Sagara</span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl font-medium text-[#00ffff] mb-4 min-h-[32px]">
-            {text}
-            <span className="animate-blink">|</span>
-          </p>
-
-          <p className="text-sm sm:text-base md:text-lg text-[#00ffff] mb-8">
-            Welcome to my portfolio! Explore the other sections to learn more about my skills, services, projects.
-          </p>
-
-          <div className="flex justify-center md:justify-start space-x-4 text-lg sm:text-xl mb-6">
-            <a
-              href="https://github.com/kasunsagara"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kasun-sagara-ba47b22a9/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              href="https://www.facebook.com/kasun.sagara.672450?mibextid=ZbWKwL"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="https://wa.me/94771670585"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-700 text-[#00ffff] rounded-full p-2 hover:bg-[#00ffff] hover:text-gray-700 transition-transform transform hover:scale-110"
-            >
-              <FaWhatsapp />
-            </a>
+          <div className="h-16 mb-8 flex items-center">
+            <p className="text-2xl md:text-3xl text-gray-300 font-mono">
+              &gt; <span className="text-cyan-400">{text}</span>
+              <span className="text-cyan-400 animate-pulse">_</span>
+            </p>
           </div>
 
-          {/* Download CV Button */}
-          <a
-            href="/KasunSagaraCV.pdf"
-            download
-            className="inline-block py-2 px-6 text-base sm:text-lg font-semibold bg-[#00ffff] text-[#192230] rounded-lg shadow-lg hover:bg-[#192230] hover:text-[#00ffff] hover:border-2 border-[#00ffff] transition-transform transform duration-300 z-10 relative"
-          >
-            Download CV
-          </a>
+          <p className="text-gray-400 mb-10 max-w-2xl text-lg leading-relaxed mx-auto md:mx-0">
+            Passionate <span className="text-cyan-400">Computer Science student</span> and <span className="text-blue-400">Full Stack Developer</span> crafting digital experiences with modern technologies. Welcome to my portfolio!
+          </p>
+
+          {/* Social Links */}
+          <div className="flex justify-center md:justify-start space-x-4 mb-10">
+            {[
+              { icon: FaGithub, href: "https://github.com/kasunsagara", color: "hover:bg-gray-700" },
+              { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/kasun-sagara-ba47b22a9/", color: "hover:bg-blue-600" },
+              { icon: FaFacebookF, href: "https://www.facebook.com/kasun.sagara.672450?mibextid=ZbWKwL", color: "hover:bg-blue-500" },
+              { icon: FaWhatsapp, href: "https://wa.me/94771670585", color: "hover:bg-green-500" }
+            ].map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group bg-gray-800/50 backdrop-blur-sm p-4 rounded-2xl border border-gray-700 hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 ${social.color}`}
+              >
+                <social.icon className="text-xl text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+            ))}
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+            <a
+              href="/KasunSagaraCV.pdf"
+              download
+              className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-cyan-500/30 border border-cyan-400/20 flex items-center justify-center space-x-3"
+            >
+              <FaDownload className="text-lg" />
+              <span>Download CV</span>
+            </a>
+              <button
+                onClick={() => {
+                  const projectSection = document.querySelector("#projects");
+                  if (projectSection) {
+                    projectSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="group bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 border border-gray-700 hover:border-cyan-400/50 flex items-center justify-center space-x-3"
+              >
+                <span>View Projects</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+          </div>
         </div>
 
-        {/* Circular image with spinning border */}
-        <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96">
-          <div className="absolute inset-0 rounded-full animate-pulse-glow z-0" />
-          <div className="relative w-full h-full rounded-full overflow-hidden z-10 border-4 border-[#00ffff] animate-pulse-glow">
-            <img
-              src="/picture1.jpg"
-              alt="Kasun Sagara"
-              className="w-full h-full object-cover"
-            />
+        {/* Profile Image */}
+        <div className="md:w-1/2 flex justify-center">
+          <div className="relative group">
+            {/* Outer Glow */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-all duration-1000 group-hover:scale-110"></div>
+            
+            {/* Main Image Container */}
+            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-3 shadow-2xl border border-gray-700/50 group-hover:border-cyan-400/30 transition-all duration-500">
+              <div className="relative overflow-hidden rounded-2xl">
+                <img
+                  src="/picture1.jpg"
+                  alt="Kasun Sagara"
+                  className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl transition-all duration-700 group-hover:scale-110"
+                />
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Floating Info Card */}
+              <div className="absolute -bottom-6 -right-6 bg-gray-900/90 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-4 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-mono text-cyan-300">Online</span>
+                </div>
+                <p className="text-xs text-gray-400 mt-1">Ready to code</p>
+              </div>
+            </div>
+
+            {/* Tech Badges */}
+            <div className="absolute -top-4 -left-4 bg-gray-900 border border-cyan-400/20 rounded-full px-4 py-2 backdrop-blur-sm">
+              <span className="text-sm font-mono text-cyan-300">CS Student</span>
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-gray-900 border border-blue-400/20 rounded-full px-4 py-2 backdrop-blur-sm">
+              <span className="text-sm font-mono text-blue-300">Full Stack</span>
+            </div>
           </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
