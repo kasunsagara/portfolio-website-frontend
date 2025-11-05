@@ -3,15 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FaPlus, 
-  FaCode, 
-  FaHeading, 
-  FaFileAlt, 
-  FaArrowLeft,
-  FaHandshake,
-  FaMagic
-} from 'react-icons/fa';
+import { FaPlus, FaCode, FaHeading, FaFileAlt, FaArrowLeft, FaHandshake, FaMagic } from 'react-icons/fa';
 
 // Import icon libraries for preview
 import * as FaIcons from "react-icons/fa";
