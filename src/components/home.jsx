@@ -53,13 +53,13 @@ export default function Home() {
       <div className="absolute top-3/5 left-1/2 animate-float">
         <SiJavascript className="text-yellow-400 text-4xl opacity-10" />
       </div>
-      <div className="absolute top-1/4 right-3/5 animate-float" style={{ animationDelay: '2s' }}>
+      <div className="absolute top-1/4 right-3/5 animate-float">
         <SiReact className="text-cyan-400 text-4xl opacity-10" />
       </div>
-      <div className="absolute bottom-1/4 left-1/3 animate-float" style={{ animationDelay: '4s' }}>
+      <div className="absolute bottom-1/4 left-1/3 animate-float">
         <SiCisco className="text-blue-500 text-4xl opacity-20" />
       </div>
-      <div className="absolute bottom-1/4 right-1/2 animate-float" style={{ animationDelay: '6s' }}>
+      <div className="absolute bottom-1/4 right-1/2 animate-float">
         <FaCode className="text-green-400 text-4xl opacity-10" />
       </div>
 
