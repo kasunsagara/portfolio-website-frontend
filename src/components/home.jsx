@@ -60,7 +60,7 @@ export default function Home() {
         <SiCisco className="text-blue-500 text-4xl opacity-20" />
       </div>
       <div className="absolute bottom-1/4 right-1/2 animate-float" style={{ animationDelay: '6s' }}>
-        <FaCode className="text-green-400 text-4xl opacity-10" />
+        <FaCode className="text-green-400 text-4xl opacity-15" />
       </div>
 
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16 relative z-10">
@@ -137,7 +137,7 @@ export default function Home() {
             <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-3 shadow-2xl border border-gray-700/50 group-hover:border-cyan-400/30 transition-all duration-500">
               <div className="relative overflow-hidden rounded-2xl">
                 <img
-                  src="/picture1.jpg"
+                  src="/picture1.png"
                   alt="Kasun Sagara"
                   className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl transition-all duration-700 group-hover:scale-110"
                 />

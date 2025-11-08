@@ -143,9 +143,9 @@ export default function About() {
               <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-all duration-1000"></div>
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-3 shadow-2xl border border-gray-700/50 group-hover:border-cyan-400/30 transition-all duration-500">
                 <img 
-                  src="/picture2.jpg" 
+                  src="/picture2.png" 
                   alt="Kasun Sagara" 
-                  className="w-80 h-96 object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                  className="w-80 h-96 object-cover rounded-2xl group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                 />
                 <div className="absolute -bottom-4 -right-4 bg-gray-900/90 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-4 shadow-2xl">
                   <div className="flex items-center space-x-2">
