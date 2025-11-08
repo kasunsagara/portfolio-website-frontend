@@ -60,7 +60,7 @@ export default function Home() {
         <SiCisco className="text-blue-500 text-4xl opacity-20" />
       </div>
       <div className="absolute bottom-1/4 right-1/2 animate-float" style={{ animationDelay: '6s' }}>
-        <FaCode className="text-green-400 text-4xl opacity-15" />
+        <FaCode className="text-green-400 text-4xl opacity-10" />
       </div>
 
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16 relative z-10">
