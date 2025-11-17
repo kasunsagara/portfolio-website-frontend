@@ -34,7 +34,7 @@ const tools = [
   },
   {
     name: "Deepseek",
-    description: "AI-powered search and intelligent discovery platform",
+    description: "AI-powered search and intelligent discovery platform with automation",
     link: "https://chat.deepseek.com",
     icon: <FaBrain className="text-2xl" />,
     bgGradient: "from-indigo-500 to-purple-600",
