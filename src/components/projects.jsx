@@ -17,7 +17,7 @@ export default function Projects() {
         description: "A sleek, responsive MERN Stack portfolio with dynamic role sections, project showcases, and a modern Tailwind CSS design. Includes a secure admin panel for easy updates and a contact form for direct communication.",
         startDate: "2025-04-18",
         endDate: "2025-05-04",
-        skills: ["MERN Stack", "MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
+        skills: ["React.js", "Tailwind CSS"],
         githubLink: "https://github.com/kasunsagara/portfolio-website-frontend.git",
         linkedinLink: "https://linkedin.com/in/yourprofile",
         category: "frontend"
@@ -29,7 +29,7 @@ export default function Projects() {
         description: "Modern MERN Library System with JWT auth, role-based access, real-time tracking, smart fines, and Supabase images. Admins/librarians manage users browse, borrow, track. Built with React and Tailwind CSS.",
         startDate: "2025-03-08",
         endDate: "2025-04-12",
-        skills: ["MERN Stack", "MongoDB", "Express.js", "React.js", "JWT", "Supabase"],
+        skills: ["MERN Stack", "MongoDB", "Express.js", "React.js", "Node.js"],
         githubLink: "https://github.com/kasunsagara/library-management-system-frontend.git",
         linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_mernstack-fullstackdeveloper-librarymanagementsystem-activity-7337295852517941248-ectf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
         category: "fullstack"
@@ -41,7 +41,7 @@ export default function Projects() {
         description: "KSW Beauty Care is a MERN-stack beauty care web application with secure login, role-based access, and features for shopping, inventory management, and analytics, using Supabase for image storage.",
         startDate: "2024-11-26",
         endDate: "2025-02-12",
-        skills: ["UI UX design", "MongoDB", "Express.js", "React.js", "Supabase", "Node.js"],
+        skills: ["MERN Stack", "MongoDB", "Express.js", "React.js", "Node.js","UI UX design", "Tailwind CSS"],
         githubLink: "https://github.com/kasunsagara/ksw-beauty-care-web-application-frontend.git",
         linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_mern-react-vite-activity-7303605963767316480-9pia?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
         category: "fullstack"
@@ -53,7 +53,7 @@ export default function Projects() {
         description: "A full-stack MERN application for efficient user management, featuring a responsive CSS-styled UI and RESTful APIs (GET, POST, PUT, DELETE) to view, add, update, and delete user data seamlessly.",
         startDate: "2024-08-14",
         endDate: "2024-10-12",
-        skills: ["MongoDB", "Express.js", "React.js", "Node.js", "RESTful APIs", "CSS"],
+        skills: ["MERN Stack", "MongoDB", "Express.js", "React.js", "Node.js", "CSS"],
         githubLink: "https://github.com/kasunsagara/user-management-system-frontend.git",
         linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_mernstack-webdevelopment-fullstackdevelopment-activity-7270316158170365953-3iTT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
         category: "fullstack"
@@ -65,7 +65,7 @@ export default function Projects() {
         description: "Spotlight Cinema is a sleek, responsive movie search site built with HTML, CSS, and JavaScript, featuring real-time results via a movie API and a modern, fast interface.",
         startDate: "2024-06-18",
         endDate: "2024-07-06",
-        skills: ["HTML", "CSS", "JavaScript", "APIs", "Frontend Development"],
+        skills: ["HTML", "CSS", "JavaScript", "APIs"],
         githubLink: "https://github.com/kasunsagara/spotlight-cinema-movie-search-website.git",
         linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_webdevelopment-javascriptmagic-apiintegration-activity-7262136382440054786-c43B?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
         category: "frontend"
@@ -77,7 +77,7 @@ export default function Projects() {
         description: "CEYLON EXPLORER is a travel website built using HTML, CSS, Node.js, and MySQL. It allows users to explore top Sri Lankan destinations and includes user registration features.",
         startDate: "2024-02-08",
         endDate: "2024-04-18",
-        skills: ["HTML", "CSS", "JavaScript", "Node.js", "MySQL", "Backend Development"],
+        skills: ["HTML", "CSS", "JavaScript", "Node.js", "MySQL"],
         githubLink: "https://github.com/kasunsagara/ceylon-explorer-travelling-website.git",
         linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_my-first-project-is-ceylon-explorer-traveling-activity-7208563271237337088-f6Gr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
         category: "fullstack"
@@ -310,7 +310,7 @@ function ProjectCard({ project, index, hoveredProject, setHoveredProject, varian
               <span className="font-semibold">Technologies:</span>
             </div>
             <div className="flex flex-wrap gap-2">
-              {skills.slice(0, 4).map((skill, skillIndex) => (
+              {skills.slice().map((skill, skillIndex) => (
                 <motion.span
                   key={skillIndex}
                   initial={{ opacity: 0, scale: 0 }}
@@ -321,11 +321,6 @@ function ProjectCard({ project, index, hoveredProject, setHoveredProject, varian
                   {skill}
                 </motion.span>
               ))}
-              {skills.length > 4 && (
-                <span className="px-3 py-1 bg-gray-700/50 text-gray-400 rounded-full text-xs border border-gray-600">
-                  +{skills.length - 4} more
-                </span>
-              )}
             </div>
           </div>
 
