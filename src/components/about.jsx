@@ -45,7 +45,8 @@ export default function About() {
       { name: "Git", desc: "Version control system", category: "tools", icon: "FaGitAlt" },
       { name: "VS Code", desc: "Code editor", category: "tools", icon: "SiVisualstudiocode" },
       { name: "Postman", desc: "API testing tool", category: "tools", icon: "SiPostman" },
-      { name: "Figma", desc: "UI/UX design tool", category: "tools", icon: "SiFigma" },      
+      { name: "Figma", desc: "UI/UX design tool", category: "tools", icon: "SiFigma" },
+      { name: "Cisco Packet Tracer", desc: "Network simulation tool", category: "tools", icon: "SiCiscopackettracer" },      
       
       // Other Skills
       { name: "Time Management", desc: "Manage time and meet deadlines", category: "other", icon: "FaClock" },
