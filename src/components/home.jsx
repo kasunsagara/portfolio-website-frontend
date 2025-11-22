@@ -41,12 +41,7 @@ export default function Home() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 to-black text-white pt-20">
-      {/* Animated Background Elements */}
-      <div 
-        className="absolute inset-0 opacity-30 transition-all duration-1000"
-      ></div>
-      
-      {/* Grid Pattern */}
+      {/* Background Elements */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
       
       {/* Floating Tech Icons */}
