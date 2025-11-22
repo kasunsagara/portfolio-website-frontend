@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCode } from "react-icons/fa";
 
@@ -11,24 +10,48 @@ import * as AiIcons from "react-icons/ai";
 import * as BsIcons from "react-icons/bs";
 
 export default function Services() {
-  const [services, setServices] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // Static data - no need for useState since we're not updating it
+  const services = [
+    {
+      _id: "1",
+      title: "Web Development",
+      description: "I provide comprehensive web development services, including full stack development covering both front and back ends, and specialized MERN stack development using MongoDB, Express.js, React.js, and Node.js, for scalable and efficient applications. My expertise includes RESTful API development, secure authentication using JWT and OAuth, and robust integration with MongoDB.",
+      icon: "FaCode",
+      features: [
+        "MERN Stack Applications",
+        "RESTful API Development",
+        "JWT & OAuth Authentication",
+        "MongoDB Integration"
+      ]
+    },
+    {
+      _id: "2",
+      title: "UI/UX Design",
+      description: "My UI/UX design services focus on creating intuitive and visually appealing interfaces using Figma, ensuring a seamless experience across web and mobile platforms. I create wireframes and responsive prototypes that align with your brand, prioritizing user centered design principles. I am skilled at transforming complex ideas into clear and user-friendly designs.",
+      icon: "BsBrush",
+      features: [
+        "Figma Prototyping",
+        "Wireframing",
+        "Responsive Design",
+        "Web Interfaces"
+      ]
+    },
+    {
+      _id: "3",
+      title: "Cisco Networking",
+      description: "I provide professional Cisco networking services, including router and switch configuration, VLAN setup, subnetting, routing, and network security. I work with DHCP, DNS, NAT, ACLs, and VPNs to build secure, fast, and reliable networks. I design, optimize, and troubleshoot Cisco-based networks to ensure smooth and efficient performance.",
+      icon: "FaNetworkWired",
+      features: [
+        "Router & Switch Configuration",
+        "VLAN Setup & Subnetting",
+        "DHCP, DNS & NAT",
+        "Network Optimization"
+      ]
+    }
+  ];
+  
+  const [isLoading, setIsLoading] = useState(false);
   const [hoveredCard, setHoveredCard] = useState(null);
-
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/services`);
-        setServices(response.data);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchServices();
-  }, []);
 
   // Helper to get icon component
   const getIconComponent = (iconName) => {
@@ -80,6 +103,29 @@ export default function Services() {
       transition: {
         duration: 0.6,
         ease: "easeInOut"
+      }
+    }
+  };
+
+  const featuresContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delay: 0.3
+      }
+    }
+  };
+
+  const featureItemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
       }
     }
   };
@@ -210,54 +256,39 @@ export default function Services() {
                         {service.description}
                       </motion.p>
 
-                      {/* Features List */}
-                      {service.features && (
-                        <motion.div 
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ 
-                            opacity: hoveredCard === service._id ? 1 : 0,
-                            height: hoveredCard === service._id ? 'auto' : 0
-                          }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
+                      {/* Features List - Always Visible */}
+                      <div className="border-t border-gray-700 pt-4 mt-6">
+                        <motion.h4 
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 0.4 + index * 0.1 }}
+                          className="text-sm font-semibold text-cyan-400 mb-3"
                         >
-                          <div className="border-t border-gray-700 pt-4">
-                            <h4 className="text-sm font-semibold text-cyan-400 mb-3">Key Features:</h4>
-                            <ul className="space-y-2">
-                              {service.features.map((feature, featureIndex) => (
-                                <motion.li
-                                  key={featureIndex}
-                                  initial={{ opacity: 0, x: -10 }}
-                                  animate={{ 
-                                    opacity: hoveredCard === service._id ? 1 : 0,
-                                    x: hoveredCard === service._id ? 0 : -10
-                                  }}
-                                  transition={{ delay: featureIndex * 0.1 }}
-                                  className="flex items-center space-x-2 text-sm text-gray-300"
-                                >
-                                  <motion.div 
-                                    animate={{ scale: hoveredCard === service._id ? 1 : 0 }}
-                                    className="w-1.5 h-1.5 bg-cyan-400 rounded-full"
-                                  />
-                                  <span>{feature}</span>
-                                </motion.li>
-                              ))}
-                            </ul>
-                          </div>
-                        </motion.div>
-                      )}
-
-                      {/* CTA Button */}
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ 
-                          opacity: hoveredCard === service._id ? 1 : 0,
-                          y: hoveredCard === service._id ? 0 : 10
-                        }}
-                        transition={{ duration: 0.3 }}
-                        className="mt-6"
-                      >
-                      </motion.div>
+                          Key Features:
+                        </motion.h4>
+                        <motion.ul 
+                          className="space-y-2"
+                          variants={featuresContainerVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                        >
+                          {service.features.map((feature, featureIndex) => (
+                            <motion.li
+                              key={featureIndex}
+                              variants={featureItemVariants}
+                              className="flex items-start space-x-2 text-sm text-gray-300"
+                            >
+                              <motion.div 
+                                initial={{ scale: 0 }}
+                                whileInView={{ scale: 1 }}
+                                transition={{ delay: 0.5 + featureIndex * 0.1 }}
+                                className="w-1.5 h-1.5 bg-cyan-400 rounded-full flex-shrink-0 mt-1.5"
+                              />
+                              <span>{feature}</span>
+                            </motion.li>
+                          ))}
+                        </motion.ul>
+                      </div>
 
                       {/* Corner Accent */}
                       <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden">
@@ -294,22 +325,22 @@ export default function Services() {
               <h3 className="text-xl font-bold text-white mb-2">Ready to start your project?</h3>
               <p className="text-gray-400">Let's work together to bring your ideas to life</p>
             </div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  const contactSection = document.querySelector("#contact");
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 border border-cyan-400/20 shadow-2xl shadow-cyan-500/25"
-              >
-                Get In Touch
-              </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const contactSection = document.querySelector("#contact");
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 border border-cyan-400/20 shadow-2xl shadow-cyan-500/25"
+            >
+              Get In Touch
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>
     </section>
   );
-};
+}

@@ -9,17 +9,12 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Hidden shortcut for admin login
   useEffect(() => {
     const handleKeyDown = (e) => {
       keysPressed.current[e.key.toLowerCase()] = true;
 
       if (keysPressed.current['k'] && keysPressed.current['s']) {
-        navigate('/admin-login');
-      }
-
-      if (keysPressed.current['b'] && keysPressed.current['w']) {
-        navigate('/admin-secret');
+        navigate('/secret');
       }
     };
 

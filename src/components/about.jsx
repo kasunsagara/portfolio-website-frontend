@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { FaUniversity, FaSchool, FaLaptopCode, FaServer, FaDatabase, FaTools, FaMedal, FaThLarge, FaGraduationCap, FaCode,
-FaBriefcase } from "react-icons/fa";
+import { FaUniversity, FaSchool, FaLaptopCode, FaServer, FaDatabase, FaTools, FaMedal, FaThLarge, FaGraduationCap, FaCode, FaBriefcase, FaPalette, FaNetworkWired } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 import * as FaIcons from "react-icons/fa";
@@ -13,22 +11,52 @@ import * as BsIcons from "react-icons/bs";
 export default function About() {
   const [activeTab, setActiveTab] = useState("education");
   const [skills, setSkills] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
+  // Define skills locally instead of fetching from backend
   useEffect(() => {
-    const fetchSkills = async () => {
-      try {
-        const res = await axios.get(
-          import.meta.env.VITE_BACKEND_URL + "/api/skills"
-        );
-        setSkills(res.data);
-      } catch (err) {
-        console.error("Failed to fetch skills:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchSkills();
+    const localSkills = [
+      // Frontend Development
+      { name: "React.js", desc: "Frontend JS library", category: "frontend", icon: "FaReact" },
+      { name: "Tailwind CSS", desc: "Utility first CSS framework", category: "frontend", icon: "SiTailwindcss" },
+      { name: "HTML", desc: "Markup language for structure", category: "frontend", icon: "FaHtml5" },
+      { name: "CSS", desc: "Styling language for layout", category: "frontend", icon: "FaCss3Alt" },
+      { name: "JavaScript", desc: "Scripting language for interactivity", category: "frontend", icon: "SiJavascript" },
+      
+      // Backend Development
+      { name: "Node.js", desc: "JavaScript runtime", category: "backend", icon: "FaNodeJs" },
+      { name: "Express.js", desc: "Backend web framework", category: "backend", icon: "SiExpress" },
+      { name: "APIs", desc: "Restful APIs", category: "backend", icon: "FaServer" },
+      
+      // Databases
+      { name: "MongoDB", desc: "NoSQL database system", category: "database", icon: "SiMongodb" },
+      { name: "MySQL", desc: "SQL based relational database", category: "database", icon: "SiMysql" },
+      
+      // UI/UX Design
+      { name: "Wireframing", desc: "Creating basic layout structures", category: "uiux", icon: "FaVectorSquare" },
+      { name: "Prototyping", desc: "Interactive design mockups", category: "uiux", icon: "FaMousePointer" },
+      
+      // Cisco Networking
+      { name: "Routing & Switching", desc: "Network infrastructure configuration", category: "cisco", icon: "FaRoute" },
+      { name: "TCP/IP Protocols", desc: "Internet protocol suite", category: "cisco", icon: "FaGlobe" },
+      { name: "VLAN Configuration", desc: "Virtual LAN setup and management", category: "cisco", icon: "FaSitemap" },
+
+      // Tools & Technologies
+      { name: "Git", desc: "Version control system", category: "tools", icon: "FaGitAlt" },
+      { name: "VS Code", desc: "Code editor", category: "tools", icon: "SiVisualstudiocode" },
+      { name: "Postman", desc: "API testing tool", category: "tools", icon: "SiPostman" },
+      { name: "Figma", desc: "UI/UX design tool", category: "tools", icon: "SiFigma" },      
+      
+      // Other Skills
+      { name: "Time Management", desc: "Manage time and meet deadlines", category: "other", icon: "FaClock" },
+      { name: "Team Management", desc: "Lead and coordinate teams", category: "other", icon: "FaUsers" },
+      { name: "Team Building", desc: "Build strong team connections", category: "other", icon: "FaHandshake" },
+      { name: "Teamwork", desc: "Work well with others", category: "other", icon: "FaUserFriends" },
+      { name: "Leadership", desc: "Inspire and guide teams", category: "other", icon: "FaMedal" }
+    ];
+    
+    setSkills(localSkills);
+    setIsLoading(false);
   }, []);
 
   const getIconComponent = (iconName) => {
@@ -81,7 +109,9 @@ export default function About() {
       frontend: { icon: FaLaptopCode, title: "Frontend Development", color: "text-cyan-400" },
       backend: { icon: FaServer, title: "Backend Development", color: "text-blue-400" },
       database: { icon: FaDatabase, title: "Databases", color: "text-green-400" },
-      tools: { icon: FaTools, title: "Tools & Technologies", color: "text-yellow-400" },
+      uiux: { icon: FaPalette, title: "UI/UX Design", color: "text-pink-400" },
+      cisco: { icon: FaNetworkWired, title: "Cisco Networking", color: "text-orange-400" },
+      tools: { icon: FaTools, title: "Tools & Technologies", color: "text-yellow-400" }, 
       other: { icon: FaThLarge, title: "Other Skills", color: "text-purple-400" }
     };
 
@@ -143,7 +173,7 @@ export default function About() {
               <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-all duration-1000"></div>
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-3 shadow-2xl border border-gray-700/50 group-hover:border-cyan-400/30 transition-all duration-500">
                 <img 
-                  src="/picture2.png" 
+                  src="/dp2.png" 
                   alt="Kasun Sagara" 
                   className="w-80 h-96 object-cover rounded-2xl group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                 />
@@ -295,7 +325,7 @@ export default function About() {
                         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
                       </div>
                     ) : (
-                      ["frontend", "backend", "database", "tools", "other"].map((category) => (
+                      ["frontend", "backend", "database", "uiux", "cisco", "tools", "other"].map((category) => (
                         <motion.div
                           key={category}
                           initial={{ opacity: 0, y: 20 }}

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
-import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin, FaCalendar, FaCode, FaTools } from "react-icons/fa";
 
@@ -10,19 +9,85 @@ export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/projects`);
-        setProjects(res.data);
-      } catch (err) {
-        console.error('Error fetching projects:', err);
-      } finally {
-        setIsLoading(false);
+    const staticProjects = [
+      {
+        _id: "1",
+        name: "My portfolio website",
+        image: "/picture1.png",
+        description: "A sleek, responsive MERN Stack portfolio with dynamic role sections, project showcases, and a modern Tailwind CSS design. Includes a secure admin panel for easy updates and a contact form for direct communication.",
+        startDate: "2025-04-18",
+        endDate: "2025-05-04",
+        skills: ["MERN Stack", "MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
+        githubLink: "https://github.com/kasunsagara/portfolio-website-frontend.git",
+        linkedinLink: "https://linkedin.com/in/yourprofile",
+        category: "frontend"
+      },
+      {
+        _id: "2",
+        name: "Library management system",
+        image: "/picture2.png",
+        description: "Modern MERN Library System with JWT auth, role-based access, real-time tracking, smart fines, and Supabase images. Admins/librarians manage users browse, borrow, track. Built with React and Tailwind CSS.",
+        startDate: "2025-03-08",
+        endDate: "2025-04-12",
+        skills: ["MERN Stack", "MongoDB", "Express.js", "React.js", "JWT", "Supabase"],
+        githubLink: "https://github.com/kasunsagara/library-management-system-frontend.git",
+        linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_mernstack-fullstackdeveloper-librarymanagementsystem-activity-7337295852517941248-ectf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
+        category: "fullstack"
+      },
+      {
+        _id: "3",
+        name: "KSW Beauty care web application",
+        image: "/picture3.png",
+        description: "KSW Beauty Care is a MERN-stack beauty care web application with secure login, role-based access, and features for shopping, inventory management, and analytics, using Supabase for image storage.",
+        startDate: "2024-11-26",
+        endDate: "2025-02-12",
+        skills: ["UI UX design", "MongoDB", "Express.js", "React.js", "Supabase", "Node.js"],
+        githubLink: "https://github.com/kasunsagara/ksw-beauty-care-web-application-frontend.git",
+        linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_mern-react-vite-activity-7303605963767316480-9pia?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
+        category: "fullstack"
+      },
+      {
+        _id: "4",
+        name: "User management system",
+        image: "/picture4.png",
+        description: "A full-stack MERN application for efficient user management, featuring a responsive CSS-styled UI and RESTful APIs (GET, POST, PUT, DELETE) to view, add, update, and delete user data seamlessly.",
+        startDate: "2024-08-14",
+        endDate: "2024-10-12",
+        skills: ["MongoDB", "Express.js", "React.js", "Node.js", "RESTful APIs", "CSS"],
+        githubLink: "https://github.com/kasunsagara/user-management-system-frontend.git",
+        linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_mernstack-webdevelopment-fullstackdevelopment-activity-7270316158170365953-3iTT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
+        category: "fullstack"
+      },
+      {
+        _id: "5",
+        name: "Spotlight Cinema movie search website",
+        image: "/picture5.png",
+        description: "Spotlight Cinema is a sleek, responsive movie search site built with HTML, CSS, and JavaScript, featuring real-time results via a movie API and a modern, fast interface.",
+        startDate: "2024-06-18",
+        endDate: "2024-07-06",
+        skills: ["HTML", "CSS", "JavaScript", "APIs", "Frontend Development"],
+        githubLink: "https://github.com/kasunsagara/spotlight-cinema-movie-search-website.git",
+        linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_webdevelopment-javascriptmagic-apiintegration-activity-7262136382440054786-c43B?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
+        category: "frontend"
+      },
+      {
+        _id: "6",
+        name: "CEYLON EXPLORER traveling website",
+        image: "/picture6.png",
+        description: "CEYLON EXPLORER is a travel website built using HTML, CSS, Node.js, and MySQL. It allows users to explore top Sri Lankan destinations and includes user registration features.",
+        startDate: "2024-02-08",
+        endDate: "2024-04-18",
+        skills: ["HTML", "CSS", "JavaScript", "Node.js", "MySQL", "Backend Development"],
+        githubLink: "https://github.com/kasunsagara/ceylon-explorer-travelling-website.git",
+        linkedinLink: "https://www.linkedin.com/posts/kasun-sagara-ba47b22a9_my-first-project-is-ceylon-explorer-traveling-activity-7208563271237337088-f6Gr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpVsywBVJnzZ9TkXqHfNeoMeFjXN5jMixo",
+        category: "fullstack"
       }
-    };
+    ];
 
-    fetchProjects();
+    setProjects(staticProjects);
+    setIsLoading(false);
   }, []);
+
   const AllProjects = projects;
 
   const containerVariants = {
@@ -165,27 +230,11 @@ function ProjectCard({ project, index, hoveredProject, setHoveredProject, varian
     skills,
     githubLink,
     linkedinLink,
-    category,
-    status
+    category
   } = project;
 
-  const getCategoryColor = (category) => {
-    const colors = {
-      frontend: "from-cyan-500 to-blue-600",
-      backend: "from-green-500 to-emerald-600",
-      fullstack: "from-purple-500 to-pink-600",
-      mobile: "from-orange-500 to-red-600"
-    };
-    return colors[category] || "from-cyan-500 to-blue-600";
-  };
-
-  const getStatusBadge = (status) => {
-    const styles = {
-      completed: "bg-green-500/20 text-green-400 border-green-400/30",
-      "in-progress": "bg-yellow-500/20 text-yellow-400 border-yellow-400/30",
-      planned: "bg-blue-500/20 text-blue-400 border-blue-400/30"
-    };
-    return styles[status] || "bg-gray-500/20 text-gray-400 border-gray-400/30";
+  const getCategoryColor = () => {
+    return "from-cyan-500 to-blue-600";
   };
 
   return (
@@ -202,28 +251,20 @@ function ProjectCard({ project, index, hoveredProject, setHoveredProject, varian
           opacity: hoveredProject === project._id ? 0.3 : 0.1,
           scale: hoveredProject === project._id ? 1.05 : 1
         }}
-        className={`absolute -inset-4 bg-gradient-to-br ${getCategoryColor(category)} rounded-3xl blur-xl transition-all duration-500`}
+        className={`absolute -inset-4 bg-gradient-to-br ${getCategoryColor()} rounded-3xl blur-xl transition-all duration-500`}
       />
       
       {/* Main Card */}
       <div className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden group-hover:border-cyan-400/50 transition-all duration-500 h-full flex flex-col">
         {/* Project Image */}
         <div className="relative overflow-hidden">
-          <motion.img
-            whileHover={{ scale: 1.1 }}
+          <img
             src={image}
             alt={name}
-            className="w-full h-48 object-cover transition-transform duration-500"
+            className="w-full h-48 object-cover"
           />
-          {/* Overlay Gradient */}
+          {/* Overlay Gradient - blur එක ඉවත් කරන්න */}
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
-          
-          {/* Status Badge */}
-          <div className="absolute top-4 right-4">
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${getStatusBadge(status)}`}>
-              {status === "in-progress" ? "In Progress" : status}
-            </span>
-          </div>
 
           {/* Category Badge */}
           <div className="absolute top-4 left-4">
@@ -232,14 +273,14 @@ function ProjectCard({ project, index, hoveredProject, setHoveredProject, varian
             </span>
           </div>
 
-          {/* Hover Actions */}
+          {/* Hover Actions - blur එක ඉවත් කරන්න */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ 
               opacity: hoveredProject === project._id ? 1 : 0,
               y: hoveredProject === project._id ? 0 : 20
             }}
-            className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm flex items-center justify-center space-x-4"
+            className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center space-x-4"
           >
           </motion.div>
         </div>
@@ -288,7 +329,7 @@ function ProjectCard({ project, index, hoveredProject, setHoveredProject, varian
             </div>
           </div>
 
-          {/* Action Buttons - GitHub සහ LinkedIn පමණක් */}
+          {/* Action Buttons */}
           <div className="flex space-x-3 mt-auto">
             {githubLink && (
               <motion.a

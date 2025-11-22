@@ -137,7 +137,7 @@ export default function Home() {
             <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-3 shadow-2xl border border-gray-700/50 group-hover:border-cyan-400/30 transition-all duration-500">
               <div className="relative overflow-hidden rounded-2xl">
                 <img
-                  src="/picture1.png"
+                  src="/dp1.png"
                   alt="Kasun Sagara"
                   className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl transition-all duration-700 group-hover:scale-110"
                 />
