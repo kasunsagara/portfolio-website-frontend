@@ -256,7 +256,7 @@ export default function About() {
                           problem-solving skills for the tech industry.
                         </p>
                         <div className="flex flex-wrap gap-2 mt-4">
-                          {["Programming", "Networking", "Full Stack", "Problem Solving"].map((tag, index) => (
+                          {["Programming", "Networking", "Full Stack", "Algorithms"].map((tag, index) => (
                             <span key={index} className="bg-gray-700/50 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-600">
                               {tag}
                             </span>
