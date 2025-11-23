@@ -14,7 +14,7 @@ export default function Projects() {
         _id: "1",
         name: "My portfolio website",
         image: "/picture1.png",
-        description: "A sleek, responsive MERN Stack portfolio with dynamic role sections, project showcases, and a modern Tailwind CSS design. Includes a secure admin panel for easy updates and a contact form for direct communication.",
+        description: "A modern, responsive React and Tailwind portfolio with dynamic roles, clean project sections, and an interactive contact form for a smooth, fast, engaging, visually appealing, highly intuitive, and well structured user experience.",
         startDate: "2025-04-18",
         endDate: "2025-05-04",
         skills: ["React.js", "Tailwind CSS"],

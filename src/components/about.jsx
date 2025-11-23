@@ -256,7 +256,7 @@ export default function About() {
                           problem-solving skills for the tech industry.
                         </p>
                         <div className="flex flex-wrap gap-2 mt-4">
-                          {["Programming", "Software Development", "Databases", "Full Stack", "Problem Solving"].map((tag, index) => (
+                          {["Programming", "Networking", "Full Stack", "Problem Solving"].map((tag, index) => (
                             <span key={index} className="bg-gray-700/50 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-600">
                               {tag}
                             </span>
@@ -388,9 +388,7 @@ export default function About() {
                             {[
                               "Leadership & Team Management",
                               "Time Management",
-                              "Team Building & Coordination",
                               "Problem Solving in Pressure",
-                              "Mentoring Junior Cadets",
                               "Discipline & Responsibility"
                             ].map((skill, index) => (
                               <div key={index} className="flex items-center space-x-3 bg-gray-700/30 p-3 rounded-lg border border-gray-600">

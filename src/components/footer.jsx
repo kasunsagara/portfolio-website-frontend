@@ -109,7 +109,7 @@ export default function Footer() {
 
               {/* Tech Stack */}
               <div className="flex flex-wrap gap-2">
-                {["React", "Node.js", "MongoDB", "Tailwind"].map((tech, index) => (
+                {["MongoDB", "Express.js", "React.js", "Node.js"].map((tech, index) => (
                   <motion.span
                     key={tech}
                     initial={{ opacity: 0, scale: 0 }}
@@ -250,16 +250,6 @@ export default function Footer() {
                 <span>and</span>
                 <FaCode className="text-cyan-400 ml-1" />
               </motion.div>
-              
-              <div className="w-px h-4 bg-gray-700"></div>
-              
-              <motion.a
-                href="#contact"
-                whileHover={{ color: "#22d3ee" }}
-                className="hover:text-cyan-400 transition-colors duration-300"
-              >
-                Get In Touch
-              </motion.a>
             </div>
           </div>
         </motion.div>
